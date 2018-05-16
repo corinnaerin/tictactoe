@@ -1,0 +1,85 @@
+{
+  "extends": [ "tslint:latest", "tslint-eslint-rules", "tslint-react" ],
+  "rules": {
+    "ordered-imports": false,
+    "quotemark": [ true, "single" ],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "never",
+        "singleline": "never"
+      }
+    ],
+    "interface-name": false,
+    "max-line-length": [ true, 200 ],
+    "no-unused-expression": false,
+    "no-var-requires": false,
+    "ter-max-len": [ 2, {
+      "code": 200,
+      "tabWidth": true,
+      "ignoreUrls": true
+    } ],
+    "indent": [ true, "spaces" ],
+    "ter-indent": [ "error", 2 ],
+    "arrow-parens": false,
+    "require-jsdoc": false,
+    "react/prop-types": false,
+    "spaced-comment": false,
+    "object-curly-spacing": [ "error", "always" ],
+    "object-literal-sort-keys": false,
+    "valid-jsdoc": false,
+    "no-implicit-coercion": false,
+    "no-unused-expressions": false,
+    "no-cond-assign": false,
+    "no-console": false,
+    "no-constant-condition": true,
+    "no-control-regex": true,
+    "no-debugger": true,
+    "no-duplicate-case": true,
+    "no-empty-character-class": true,
+    "no-empty": true,
+    "no-ex-assign": true,
+    "no-extra-boolean-cast": true,
+    "no-extra-parens": false,
+    "no-extra-semi": true,
+    "no-inner-declarations": true,
+    "no-invalid-regexp": true,
+    "ter-no-irregular-whitespace": true,
+    "no-regex-spaces": true,
+    "ter-no-sparse-arrays": true,
+    "no-unexpected-multiline": true,
+    "no-unsafe-finally": true,
+    "use-isnan": true,
+    "valid-typeof": true,
+    "forin": true,
+    "no-alert": false,
+    "no-arg": true,
+    "no-eval": true,
+    "no-switch-case-fall-through": true,
+    "no-invalid-this": true,
+    "no-multi-spaces": true,
+    "no-construct": true,
+    "no-duplicate-variable": true,
+    "no-string-throw": true,
+    "no-unused-variable": [ true, {
+      "ignore-pattern": "React"
+    } ],
+    "array-bracket-spacing": [ 2, "never" ],
+    "brace-style": [
+      true,
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "variable-name": true,
+    "eofline": false,
+    "ter-func-call-spacing": true,
+    "keyword-spacing": false,
+    "linebreak-style": true,
+    "no-trailing-whitespace": true,
+    "semicolon": [ true, "always" ],
+    "no-var-keyword": true,
+    "no-implicit-dependencies": [ true, "dev" ]
+  }
+}

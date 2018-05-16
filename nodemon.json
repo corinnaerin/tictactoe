@@ -1,0 +1,6 @@
+{
+  "verbose": true,
+  "exec": "ts-node",
+  "watch": "server",
+  "ext": "ts,tsx"
+}
