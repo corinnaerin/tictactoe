@@ -76,10 +76,29 @@
     "eofline": false,
     "ter-func-call-spacing": true,
     "keyword-spacing": false,
-    "linebreak-style": true,
+    "linebreak-style": false,
     "no-trailing-whitespace": true,
     "semicolon": [ true, "always" ],
     "no-var-keyword": true,
-    "no-implicit-dependencies": [ true, "dev" ]
+    "no-implicit-dependencies": [ true, "dev" ],
+    "member-ordering": [ true, {
+      "order": [
+        "public-static-field",
+        "protected-static-field",
+        "private-static-field",
+        "public-instance-field",
+        "protected-instance-field",
+        "private-instance-field",
+        "public-constructor",
+        "protected-constructor",
+        "private-constructor",
+        "public-instance-method",
+        "protected-instance-method",
+        "private-instance-method",
+        "public-static-method",
+        "protected-static-method",
+        "private-static-method"
+      ]
+    }]
   }
 }
