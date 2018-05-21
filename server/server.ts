@@ -1,9 +1,9 @@
 import * as express from 'express';
 import * as path from 'path';
 import * as log from 'fancy-log';
-import validateBoard from './middleware/validate-board';
+import parseInput from './middleware/parse-input';
 import errorHandler from './middleware/error-handler';
-import WinnerController from './controllers/winner-controller';
+import Routes from './routes';
 
 /**
  * My server!
@@ -40,10 +40,14 @@ class Server {
     const router = express.Router();
 
     router.use(express.json());
-    router.use(validateBoard);
-    router.use(errorHandler);
+    router.use(parseInput);
 
-    router.post('/winner', WinnerController.post);
+    router.post('/winner', Routes.winner);
+    router.post('/move/easy', Routes.easy);
+    router.post('/move/medium', Routes.medium);
+    router.post('/move/hard', Routes.hard);
+
+    router.use(errorHandler);
 
     this.app.use('/api', router);
   }

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CoordinatesHelper | TicTacToe Dungeon</title>
+	<title>AI | TicTacToe Dungeon</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,13 +54,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_client_scripts_coordinateshelper_.html">&quot;client/scripts/CoordinatesHelper&quot;</a>
+					<a href="../modules/_server_ai_ai_.html">&quot;server/ai/ai&quot;</a>
 				</li>
 				<li>
-					<a href="_client_scripts_coordinateshelper_.coordinateshelper.html">CoordinatesHelper</a>
+					<a href="_server_ai_ai_.ai.html">AI</a>
 				</li>
 			</ul>
-			<h1>Class CoordinatesHelper</h1>
+			<h1>Class AI</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">CoordinatesHelper</span>
+						<span class="target">AI</span>
 					</li>
 				</ul>
 			</section>
@@ -80,121 +80,172 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_server_ai_ai_.ai.html#hard_preferred_moves" class="tsd-kind-icon">HARD_<wbr>PREFERRED_<wbr>MOVES</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_server_ai_ai_.ai.html#medium_preferred_moves" class="tsd-kind-icon">MEDIUM_<wbr>PREFERRED_<wbr>MOVES</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_client_scripts_coordinateshelper_.coordinateshelper.html#getcoordinatesforsquare" class="tsd-kind-icon">get<wbr>Coordinates<wbr>For<wbr>Square</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_client_scripts_coordinateshelper_.coordinateshelper.html#getroworcolumnindex" class="tsd-kind-icon">get<wbr>Row<wbr>OrColumn<wbr>Index</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_client_scripts_coordinateshelper_.coordinateshelper.html#getsquareclicked" class="tsd-kind-icon">get<wbr>Square<wbr>Clicked</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_server_ai_ai_.ai.html#geteasymove" class="tsd-kind-icon">get<wbr>Easy<wbr>Move</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_server_ai_ai_.ai.html#gethardmove" class="tsd-kind-icon">get<wbr>Hard<wbr>Move</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_server_ai_ai_.ai.html#getmediummove" class="tsd-kind-icon">get<wbr>Medium<wbr>Move</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="hard_preferred_moves" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> HARD_<wbr>PREFERRED_<wbr>MOVES</h3>
+					<div class="tsd-signature tsd-kind-icon">HARD_<wbr>PREFERRED_<wbr>MOVES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">MoveFinder</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[{ // 1: A winning move for the AIlineMoveFinder: winningMove,args: [Player.AI]},{ // 2: Block a winning move for the userlineMoveFinder: winningMove,args: [Player.User]},{ // 3: Pick the middle square, since that gives the most possible ways to winboardMoveFinder: middleSquare},{ // 4: Pick a line that we already have one claimed inlineMoveFinder: secondInLine,args: Player.AI},{// 5: Pick a square that is empty in both row and columnboardMoveFinder: emptyRowAndColumn},{// 6: First in an empty line, randomly pick an open squarelineMoveFinder: firstInLine},{// 7: Last in the line (that isn&#x27;t a winning move)lineMoveFinder: lastInLine,args: Player.AI}]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in server/ai/ai.ts:17</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>This details the preferred order to make a move for the Hard difficulty level
+								The algorithm will go through the list and find the first one that returns a move,
+							ensuring we always return the most optimal move</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{MoveFinder[]}</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="medium_preferred_moves" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> MEDIUM_<wbr>PREFERRED_<wbr>MOVES</h3>
+					<div class="tsd-signature tsd-kind-icon">MEDIUM_<wbr>PREFERRED_<wbr>MOVES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">MoveFinder</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[{ // 1: A winning move for the AIlineMoveFinder: winningMove,args: [Player.AI]},{ // 2: Block a winning move for the userlineMoveFinder: winningMove,args: [Player.User]},{ // 3: Just randomly choose a valid moveboardMoveFinder: randomSquare}]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in server/ai/ai.ts:55</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>This details the preferred order to make a move for the Medium difficulty level.
+								At this level, it should perform sub-optimally, but not deliberately lose.
+								That means that if it&#39;s possible to win or block a win, it will do so.
+							Otherwise, just play randomly, which is by nature going to be suboptimal.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{MoveFinder[]}</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="getcoordinatesforsquare" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Coordinates<wbr>For<wbr>Square</h3>
+					<a name="geteasymove" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Easy<wbr>Move</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Coordinates<wbr>For<wbr>Square<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Easy<wbr>Move<span class="tsd-signature-symbol">(</span>board<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Board</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Move</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in client/scripts/CoordinatesHelper.ts:30</li>
+									<li>Defined in server/ai/ai.ts:106</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the worst possible move available</p>
+								</div>
+								<p>Unlike with the Hard &amp; Medium levels, we can&#39;t just start at the top
+									and work our way down. The easy level is more like a blacklist than a whitelist:
+									which moves do we most <em>not</em> want to do. If we simply reverse the order of the
+									Hard difficulty, there&#39;s a good chance we&#39;ll pick an optimal move by accident.
+									For example, the last hard preferred move is to be the first in the line. It&#39;s theoretically
+									possible to be the first in a line, but win or block a win on an intersecting line.
+									This is because in the Hard order, each following step precludes the previous one. By definition
+									in the hard order, if we reach #2 (block an opponent), there are no winning moves for us.
+								We do not have the same certainty if we reverse the order.</p>
+								<p>So to get around this problem, we will create blacklists of the two types of moves we should always
+									avoid: winning moves and blocking moves. We&#39;ll randomly pick any move that doesn&#39;t fall into
+									either of those categories, unless there aren&#39;t any, in which case we&#39;ll pick first a blocking move
+								and then a winning move.</p>
+								<dl class="tsd-comment-tags">
+									<dt>type</dt>
+									<dd><p>{MoveFinder[]}</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>__namedParameters: <span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>col<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>row<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
-										</li>
-									</ul>
+									<h5>board: <span class="tsd-signature-type">Board</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
-							<ul class="tsd-parameters">
-								<li class="tsd-parameter">
-									<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Move</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="getroworcolumnindex" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Row<wbr>OrColumn<wbr>Index</h3>
+					<a name="gethardmove" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Hard<wbr>Move</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Row<wbr>OrColumn<wbr>Index<span class="tsd-signature-symbol">(</span>coord<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">0</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">1</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">2</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Hard<wbr>Move<span class="tsd-signature-symbol">(</span>board<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Board</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Move</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in client/scripts/CoordinatesHelper.ts:19</li>
+									<li>Defined in server/ai/ai.ts:74</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the most optimal move available on the board</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>coord: <span class="tsd-signature-type">any</span></h5>
+									<h5>board: <span class="tsd-signature-type">Board</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">0</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">1</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">2</span>
-							</h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Move</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="getsquareclicked" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Square<wbr>Clicked</h3>
+					<a name="getmediummove" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Medium<wbr>Move</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Square<wbr>Clicked<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Medium<wbr>Move<span class="tsd-signature-symbol">(</span>board<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Board</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Move</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in client/scripts/CoordinatesHelper.ts:8</li>
+									<li>Defined in server/ai/ai.ts:83</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get a sub-optimal move that doesn&#39;t lose on purpose</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>__namedParameters: <span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
-										</li>
-									</ul>
+									<h5>board: <span class="tsd-signature-type">Board</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
-							<ul class="tsd-parameters">
-								<li class="tsd-parameter">
-									<h5>col<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>row<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Move</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -209,7 +260,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_client_scripts_board_.html">"client/scripts/<wbr>Board"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_client_scripts_coordinateshelper_.html">"client/scripts/<wbr>Coordinates<wbr>Helper"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -218,7 +269,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_client_scripts_index_.html">"client/scripts/index"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="../modules/_server_ai_ai_.html">"server/ai/ai"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -258,24 +309,27 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_client_scripts_coordinateshelper_.coordinateshelper.html" class="tsd-kind-icon">Coordinates<wbr>Helper</a>
+						<a href="_server_ai_ai_.ai.html" class="tsd-kind-icon">AI</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_client_scripts_coordinateshelper_.coordinateshelper.html#getcoordinatesforsquare" class="tsd-kind-icon">get<wbr>Coordinates<wbr>For<wbr>Square</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_server_ai_ai_.ai.html#hard_preferred_moves" class="tsd-kind-icon">HARD_<wbr>PREFERRED_<wbr>MOVES</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_server_ai_ai_.ai.html#medium_preferred_moves" class="tsd-kind-icon">MEDIUM_<wbr>PREFERRED_<wbr>MOVES</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_client_scripts_coordinateshelper_.coordinateshelper.html#getroworcolumnindex" class="tsd-kind-icon">get<wbr>Row<wbr>OrColumn<wbr>Index</a>
+								<a href="_server_ai_ai_.ai.html#geteasymove" class="tsd-kind-icon">get<wbr>Easy<wbr>Move</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_client_scripts_coordinateshelper_.coordinateshelper.html#getsquareclicked" class="tsd-kind-icon">get<wbr>Square<wbr>Clicked</a>
+								<a href="_server_ai_ai_.ai.html#gethardmove" class="tsd-kind-icon">get<wbr>Hard<wbr>Move</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="_server_ai_ai_.ai.html#getmediummove" class="tsd-kind-icon">get<wbr>Medium<wbr>Move</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_client_scripts_coordinateshelper_.html#boardcoordinates" class="tsd-kind-icon">board<wbr>Coordinates</a>
-					</li>
 				</ul>
 			</nav>
 		</div>

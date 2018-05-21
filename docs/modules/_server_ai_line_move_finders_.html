@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CoordinatesHelper | TicTacToe Dungeon</title>
+	<title>&quot;server/ai/line-move-finders&quot; | TicTacToe Dungeon</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,147 +54,155 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_client_scripts_coordinateshelper_.html">&quot;client/scripts/CoordinatesHelper&quot;</a>
-				</li>
-				<li>
-					<a href="_client_scripts_coordinateshelper_.coordinateshelper.html">CoordinatesHelper</a>
+					<a href="_server_ai_line_move_finders_.html">&quot;server/ai/line-move-finders&quot;</a>
 				</li>
 			</ul>
-			<h1>Class CoordinatesHelper</h1>
+			<h1>External module &quot;server/ai/line-move-finders&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<span class="target">CoordinatesHelper</span>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_client_scripts_coordinateshelper_.coordinateshelper.html#getcoordinatesforsquare" class="tsd-kind-icon">get<wbr>Coordinates<wbr>For<wbr>Square</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_client_scripts_coordinateshelper_.coordinateshelper.html#getroworcolumnindex" class="tsd-kind-icon">get<wbr>Row<wbr>OrColumn<wbr>Index</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_client_scripts_coordinateshelper_.coordinateshelper.html#getsquareclicked" class="tsd-kind-icon">get<wbr>Square<wbr>Clicked</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_server_ai_line_move_finders_.html#firstinline" class="tsd-kind-icon">first<wbr>InLine</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_server_ai_line_move_finders_.html#lastinline" class="tsd-kind-icon">last<wbr>InLine</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_server_ai_line_move_finders_.html#secondinline" class="tsd-kind-icon">second<wbr>InLine</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_server_ai_line_move_finders_.html#winningmove" class="tsd-kind-icon">winning<wbr>Move</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="getcoordinatesforsquare" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Coordinates<wbr>For<wbr>Square</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Coordinates<wbr>For<wbr>Square<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="firstinline" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> first<wbr>InLine</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">first<wbr>InLine<span class="tsd-signature-symbol">(</span>line<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Line</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in client/scripts/CoordinatesHelper.ts:30</li>
+									<li>Defined in server/ai/line-move-finders.ts:53</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a random index if the line is empty, or -1 if the line isn&#39;t empty</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>__namedParameters: <span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>col<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>row<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
-										</li>
-									</ul>
+									<h5>line: <span class="tsd-signature-type">Line</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
-							<ul class="tsd-parameters">
-								<li class="tsd-parameter">
-									<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="getroworcolumnindex" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Row<wbr>OrColumn<wbr>Index</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Row<wbr>OrColumn<wbr>Index<span class="tsd-signature-symbol">(</span>coord<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">0</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">1</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">2</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="lastinline" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> last<wbr>InLine</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">last<wbr>InLine<span class="tsd-signature-symbol">(</span>line<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Line</span>, player<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AI</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">User</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in client/scripts/CoordinatesHelper.ts:19</li>
+									<li>Defined in server/ai/line-move-finders.ts:68</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the index of the last open square in the line that isn&#39;t a winning move,
+									or -1 if there isn&#39;t</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>coord: <span class="tsd-signature-type">any</span></h5>
+									<h5>line: <span class="tsd-signature-type">Line</span></h5>
+								</li>
+								<li>
+									<h5>player: <span class="tsd-signature-type">AI</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">User</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">0</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">1</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">2</span>
-							</h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="getsquareclicked" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Square<wbr>Clicked</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Square<wbr>Clicked<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="secondinline" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> second<wbr>InLine</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">second<wbr>InLine<span class="tsd-signature-symbol">(</span>line<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Line</span>, player<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AI</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">User</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in client/scripts/CoordinatesHelper.ts:8</li>
+									<li>Defined in server/ai/line-move-finders.ts:33</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an index in the line if it has exactly one square claimed by the given player and the
+									rest empty. i.e. it&#39;s the second move in the line, or -1 if the line doesn&#39;t qualify</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>__namedParameters: <span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
-										</li>
-									</ul>
+									<h5>line: <span class="tsd-signature-type">Line</span></h5>
+								</li>
+								<li>
+									<h5>player: <span class="tsd-signature-type">AI</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">User</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="winningmove" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> winning<wbr>Move</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">winning<wbr>Move<span class="tsd-signature-symbol">(</span>line<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Line</span>, player<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AI</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">User</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in server/ai/line-move-finders.ts:17</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the index in the line that will allow the given player to complete it (and win)
+									or -1 if it can&#39;t</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
-								<li class="tsd-parameter">
-									<h5>col<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<li>
+									<h5>line: <span class="tsd-signature-type">Line</span></h5>
 								</li>
-								<li class="tsd-parameter">
-									<h5>row<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<li>
+									<h5>player: <span class="tsd-signature-type">AI</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">User</span></h5>
 								</li>
 							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -207,74 +215,65 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_client_scripts_board_.html">"client/scripts/<wbr>Board"</a>
+						<a href="_client_scripts_board_.html">"client/scripts/<wbr>Board"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_client_scripts_coordinateshelper_.html">"client/scripts/<wbr>Coordinates<wbr>Helper"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_client_scripts_game_.html">"client/scripts/<wbr>Game"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_client_scripts_index_.html">"client/scripts/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_server_ai_ai_.html">"server/ai/ai"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_server_ai_board_move_finders_.html">"server/ai/board-<wbr>move-<wbr>finders"</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_client_scripts_coordinateshelper_.html">"client/scripts/<wbr>Coordinates<wbr>Helper"</a>
+						<a href="_server_ai_line_move_finders_.html">"server/ai/line-<wbr>move-<wbr>finders"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_client_scripts_game_.html">"client/scripts/<wbr>Game"</a>
+						<a href="_server_index_.html">"server/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_client_scripts_index_.html">"client/scripts/index"</a>
+						<a href="_server_middleware_error_handler_.html">"server/middleware/error-<wbr>handler"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_ai_ai_.html">"server/ai/ai"</a>
+						<a href="_server_middleware_parse_input_.html">"server/middleware/parse-<wbr>input"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_ai_board_move_finders_.html">"server/ai/board-<wbr>move-<wbr>finders"</a>
+						<a href="_server_routes_.html">"server/routes"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_ai_line_move_finders_.html">"server/ai/line-<wbr>move-<wbr>finders"</a>
+						<a href="_server_server_.html">"server/server"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_index_.html">"server/index"</a>
+						<a href="_server_util_move_util_.html">"server/util/move-<wbr>util"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_middleware_error_handler_.html">"server/middleware/error-<wbr>handler"</a>
+						<a href="_server_util_random_util_.html">"server/util/random-<wbr>util"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_middleware_parse_input_.html">"server/middleware/parse-<wbr>input"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_routes_.html">"server/routes"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_server_.html">"server/server"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_util_move_util_.html">"server/util/move-<wbr>util"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_util_random_util_.html">"server/util/random-<wbr>util"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_util_tic_tac_toe_util_.html">"server/util/tic-<wbr>tac-<wbr>toe-<wbr>util"</a>
+						<a href="_server_util_tic_tac_toe_util_.html">"server/util/tic-<wbr>tac-<wbr>toe-<wbr>util"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_client_scripts_coordinateshelper_.coordinateshelper.html" class="tsd-kind-icon">Coordinates<wbr>Helper</a>
-						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_client_scripts_coordinateshelper_.coordinateshelper.html#getcoordinatesforsquare" class="tsd-kind-icon">get<wbr>Coordinates<wbr>For<wbr>Square</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_client_scripts_coordinateshelper_.coordinateshelper.html#getroworcolumnindex" class="tsd-kind-icon">get<wbr>Row<wbr>OrColumn<wbr>Index</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_client_scripts_coordinateshelper_.coordinateshelper.html#getsquareclicked" class="tsd-kind-icon">get<wbr>Square<wbr>Clicked</a>
-							</li>
-						</ul>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_server_ai_line_move_finders_.html#firstinline" class="tsd-kind-icon">first<wbr>InLine</a>
 					</li>
-				</ul>
-				<ul class="after-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_client_scripts_coordinateshelper_.html#boardcoordinates" class="tsd-kind-icon">board<wbr>Coordinates</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_server_ai_line_move_finders_.html#lastinline" class="tsd-kind-icon">last<wbr>InLine</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_server_ai_line_move_finders_.html#secondinline" class="tsd-kind-icon">second<wbr>InLine</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_server_ai_line_move_finders_.html#winningmove" class="tsd-kind-icon">winning<wbr>Move</a>
 					</li>
 				</ul>
 			</nav>

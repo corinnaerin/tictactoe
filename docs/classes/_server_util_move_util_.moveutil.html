@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>WinnerController | TicTacToe Dungeon</title>
+	<title>MoveUtil | TicTacToe Dungeon</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,13 +54,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_server_controllers_winner_controller_.html">&quot;server/controllers/winner-controller&quot;</a>
+					<a href="../modules/_server_util_move_util_.html">&quot;server/util/move-util&quot;</a>
 				</li>
 				<li>
-					<a href="_server_controllers_winner_controller_.winnercontroller.html">WinnerController</a>
+					<a href="_server_util_move_util_.moveutil.html">MoveUtil</a>
 				</li>
 			</ul>
-			<h1>Class WinnerController</h1>
+			<h1>Class MoveUtil</h1>
 		</div>
 	</div>
 </header>
@@ -70,13 +70,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Controller for the /api/winner route
-							Given a 3x3 tic-tac-toe board, it will return the winner
-							(if there is one) from the state of the board.
-							Player.Tie (0) = Cat&#39;s game (tie)
-							Player.User (1) = X won
-							Player.AI (2) = O won
-						Player.None (-1) = Board is incomplete</p>
+						<p>A Util class for executing board-based move finders and line-based move finders</p>
 					</div>
 				</div>
 			</section>
@@ -84,7 +78,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">WinnerController</span>
+						<span class="target">MoveUtil</span>
 					</li>
 				</ul>
 			</section>
@@ -93,206 +87,195 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_server_util_move_util_.moveutil.html#no_empty_squares" class="tsd-kind-icon">NO_<wbr>EMPTY_<wbr>SQUARES</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_server_util_move_util_.moveutil.html#no_move_found" class="tsd-kind-icon">NO_<wbr>MOVE_<wbr>FOUND</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_server_controllers_winner_controller_.winnercontroller.html#checkcolumn" class="tsd-kind-icon">check<wbr>Column</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_server_controllers_winner_controller_.winnercontroller.html#checkdownleftdiagonal" class="tsd-kind-icon">check<wbr>Down<wbr>Left<wbr>Diagonal</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_server_controllers_winner_controller_.winnercontroller.html#checkdownrightdiagonal" class="tsd-kind-icon">check<wbr>Down<wbr>Right<wbr>Diagonal</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_server_controllers_winner_controller_.winnercontroller.html#checkrow" class="tsd-kind-icon">check<wbr>Row</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_server_controllers_winner_controller_.winnercontroller.html#findwinner" class="tsd-kind-icon">find<wbr>Winner</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_server_controllers_winner_controller_.winnercontroller.html#post" class="tsd-kind-icon">post</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_server_util_move_util_.moveutil.html#executemovefinder" class="tsd-kind-icon">execute<wbr>Move<wbr>Finder</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_server_util_move_util_.moveutil.html#getfirstpossiblemove" class="tsd-kind-icon">get<wbr>First<wbr>Possible<wbr>Move</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_server_util_move_util_.moveutil.html#searchboardformove" class="tsd-kind-icon">search<wbr>Board<wbr>For<wbr>Move</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_server_util_move_util_.moveutil.html#searchlinesformove" class="tsd-kind-icon">search<wbr>Lines<wbr>For<wbr>Move</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="no_empty_squares" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> NO_<wbr>EMPTY_<wbr>SQUARES</h3>
+					<div class="tsd-signature tsd-kind-icon">NO_<wbr>EMPTY_<wbr>SQUARES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&#x60;The board has no empty squares!&#x60;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in server/util/move-util.ts:10</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="no_move_found" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> NO_<wbr>MOVE_<wbr>FOUND</h3>
+					<div class="tsd-signature tsd-kind-icon">NO_<wbr>MOVE_<wbr>FOUND<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&#x60;No valid move has been found!&#x60;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in server/util/move-util.ts:11</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-					<a name="checkcolumn" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> check<wbr>Column</h3>
+					<a name="executemovefinder" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> execute<wbr>Move<wbr>Finder</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">check<wbr>Column<span class="tsd-signature-symbol">(</span>board<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, columnIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Player</span></li>
+						<li class="tsd-signature tsd-kind-icon">execute<wbr>Move<wbr>Finder<span class="tsd-signature-symbol">(</span>board<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Board</span>, moveFinder<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MoveFinder</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Move</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/6100122/server/controllers/winner-controller.ts#L95">server/controllers/winner-controller.ts:95</a></li>
+									<li>Defined in server/util/move-util.ts:42</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Check the individual column at the specified index</p>
+									<p>A utility method to execute either the board move finder or
+									the line move finder</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>board: <span class="tsd-signature-type">any</span></h5>
+									<h5>board: <span class="tsd-signature-type">Board</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the board to check</p>
 									</div>
 								</li>
 								<li>
-									<h5>columnIndex: <span class="tsd-signature-type">any</span></h5>
+									<h5>moveFinder: <span class="tsd-signature-type">MoveFinder</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the index of the column to check</p>
+										<p>the movefinder to test all the lines against</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Player</span></h4>
-							<p>the winner that was found</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Move</span></h4>
+							<p>the first matching move found, or nothing</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-					<a name="checkdownleftdiagonal" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> check<wbr>Down<wbr>Left<wbr>Diagonal</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">check<wbr>Down<wbr>Left<wbr>Diagonal<span class="tsd-signature-symbol">(</span>board<span class="tsd-signature-symbol">: </span><a href="_client_scripts_board_.board.html" class="tsd-signature-type">Board</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Player</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="getfirstpossiblemove" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>First<wbr>Possible<wbr>Move</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>First<wbr>Possible<wbr>Move<span class="tsd-signature-symbol">(</span>board<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Board</span>, <span class="tsd-signature-symbol">...</span>preferredMoves<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MoveFinder</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Move</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/6100122/server/controllers/winner-controller.ts#L113">server/controllers/winner-controller.ts:113</a></li>
+									<li>Defined in server/util/move-util.ts:20</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Check the diagonal that starts at the top right corner</p>
+									<p>Go through the list of preferred moves and return
+									the first valid move found</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>board: <a href="_client_scripts_board_.board.html" class="tsd-signature-type">Board</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the board the check</p>
-									</div>
+									<h5>board: <span class="tsd-signature-type">Board</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>preferredMoves: <span class="tsd-signature-type">MoveFinder</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Player</span></h4>
-							<p>the winner that was found</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Move</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-					<a name="checkdownrightdiagonal" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> check<wbr>Down<wbr>Right<wbr>Diagonal</h3>
+					<a name="searchboardformove" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> search<wbr>Board<wbr>For<wbr>Move</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">check<wbr>Down<wbr>Right<wbr>Diagonal<span class="tsd-signature-symbol">(</span>board<span class="tsd-signature-symbol">: </span><a href="_client_scripts_board_.board.html" class="tsd-signature-type">Board</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Player</span></li>
+						<li class="tsd-signature tsd-kind-icon">search<wbr>Board<wbr>For<wbr>Move<span class="tsd-signature-symbol">(</span>board<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Board</span>, moveFinder<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MoveFinder</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Move</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/6100122/server/controllers/winner-controller.ts#L128">server/controllers/winner-controller.ts:128</a></li>
+									<li>Defined in server/util/move-util.ts:112</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Check the diagonal that starts at the top left corner</p>
+									<p>Executes the given board-based move finder on the board</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>board: <a href="_client_scripts_board_.board.html" class="tsd-signature-type">Board</a></h5>
+									<h5>board: <span class="tsd-signature-type">Board</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the board to check</p>
 									</div>
 								</li>
+								<li>
+									<h5>moveFinder: <span class="tsd-signature-type">MoveFinder</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the movefinder to test all the lines against</p>
+									</div>
+								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Player</span></h4>
-							<p>the winner that was found</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Move</span></h4>
+							<p>the matching move found, or nothing</p>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-					<a name="checkrow" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> check<wbr>Row</h3>
+					<a name="searchlinesformove" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> search<wbr>Lines<wbr>For<wbr>Move</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">check<wbr>Row<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Player</span></li>
+						<li class="tsd-signature tsd-kind-icon">search<wbr>Lines<wbr>For<wbr>Move<span class="tsd-signature-symbol">(</span>board<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Board</span>, moveFinder<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MoveFinder</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Move</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/6100122/server/controllers/winner-controller.ts#L76">server/controllers/winner-controller.ts:76</a></li>
+									<li>Defined in server/util/move-util.ts:54</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Check an individual row for a win</p>
+									<p>A generic utility method which will search the board for a move,
+										given the function that takes in a line and returns the index of a
+									move in that line that matches, if it exists. Otherwise returns nothing</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>row: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Player</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="findwinner" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> find<wbr>Winner</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>Winner<span class="tsd-signature-symbol">(</span>board<span class="tsd-signature-symbol">: </span><a href="_client_scripts_board_.board.html" class="tsd-signature-type">Board</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Player</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/6100122/server/controllers/winner-controller.ts#L32">server/controllers/winner-controller.ts:32</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns the winner based on the current state of the board:</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>board: <a href="_client_scripts_board_.board.html" class="tsd-signature-type">Board</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Player</span></h4>
-							<p>Player.Tie (0) = Cat&#39;s game (tie)
-								Player.User (1) = X won
-								Player.AI (2) = O won
-							Player.None (-1) = Board is incomplete</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="post" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> post</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">post<span class="tsd-signature-symbol">(</span>req<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Request</span>, res<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/6100122/server/controllers/winner-controller.ts#L16">server/controllers/winner-controller.ts:16</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>req: <span class="tsd-signature-type">Request</span></h5>
+									<h5>board: <span class="tsd-signature-type">Board</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the board to check</p>
+									</div>
 								</li>
 								<li>
-									<h5>res: <span class="tsd-signature-type">Response</span></h5>
+									<h5>moveFinder: <span class="tsd-signature-type">MoveFinder</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the movefinder to test all the lines against</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Move</span></h4>
+							<p>the first matching move found, or nothing</p>
 						</li>
 					</ul>
 				</section>
@@ -316,8 +299,14 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_client_scripts_index_.html">"client/scripts/index"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="../modules/_server_controllers_winner_controller_.html">"server/controllers/winner-<wbr>controller"</a>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_server_ai_ai_.html">"server/ai/ai"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_server_ai_board_move_finders_.html">"server/ai/board-<wbr>move-<wbr>finders"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_server_ai_line_move_finders_.html">"server/ai/line-<wbr>move-<wbr>finders"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_server_index_.html">"server/index"</a>
@@ -326,10 +315,22 @@
 						<a href="../modules/_server_middleware_error_handler_.html">"server/middleware/error-<wbr>handler"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_server_middleware_validate_board_.html">"server/middleware/validate-<wbr>board"</a>
+						<a href="../modules/_server_middleware_parse_input_.html">"server/middleware/parse-<wbr>input"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_server_routes_.html">"server/routes"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_server_server_.html">"server/server"</a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_server_util_move_util_.html">"server/util/move-<wbr>util"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_server_util_random_util_.html">"server/util/random-<wbr>util"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_server_util_tic_tac_toe_util_.html">"server/util/tic-<wbr>tac-<wbr>toe-<wbr>util"</a>
 					</li>
 				</ul>
 			</nav>
@@ -338,25 +339,25 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_server_controllers_winner_controller_.winnercontroller.html" class="tsd-kind-icon">Winner<wbr>Controller</a>
+						<a href="_server_util_move_util_.moveutil.html" class="tsd-kind-icon">Move<wbr>Util</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-								<a href="_server_controllers_winner_controller_.winnercontroller.html#checkcolumn" class="tsd-kind-icon">check<wbr>Column</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_server_util_move_util_.moveutil.html#no_empty_squares" class="tsd-kind-icon">NO_<wbr>EMPTY_<wbr>SQUARES</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_server_util_move_util_.moveutil.html#no_move_found" class="tsd-kind-icon">NO_<wbr>MOVE_<wbr>FOUND</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-								<a href="_server_controllers_winner_controller_.winnercontroller.html#checkdownleftdiagonal" class="tsd-kind-icon">check<wbr>Down<wbr>Left<wbr>Diagonal</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-								<a href="_server_controllers_winner_controller_.winnercontroller.html#checkdownrightdiagonal" class="tsd-kind-icon">check<wbr>Down<wbr>Right<wbr>Diagonal</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-								<a href="_server_controllers_winner_controller_.winnercontroller.html#checkrow" class="tsd-kind-icon">check<wbr>Row</a>
+								<a href="_server_util_move_util_.moveutil.html#executemovefinder" class="tsd-kind-icon">execute<wbr>Move<wbr>Finder</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_server_controllers_winner_controller_.winnercontroller.html#findwinner" class="tsd-kind-icon">find<wbr>Winner</a>
+								<a href="_server_util_move_util_.moveutil.html#getfirstpossiblemove" class="tsd-kind-icon">get<wbr>First<wbr>Possible<wbr>Move</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_server_controllers_winner_controller_.winnercontroller.html#post" class="tsd-kind-icon">post</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+								<a href="_server_util_move_util_.moveutil.html#searchboardformove" class="tsd-kind-icon">search<wbr>Board<wbr>For<wbr>Move</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+								<a href="_server_util_move_util_.moveutil.html#searchlinesformove" class="tsd-kind-icon">search<wbr>Lines<wbr>For<wbr>Move</a>
 							</li>
 						</ul>
 					</li>
