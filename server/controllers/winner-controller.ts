@@ -1,4 +1,4 @@
-import { Player, Board, Winner } from '../../types';
+import { Player, Board } from '../../types';
 import * as log from 'fancy-log';
 import { Request, Response } from 'express';
 
