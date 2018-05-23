@@ -11,7 +11,7 @@ const webpackConfig = {
     rules: [
       {
         test: /\.tsx?$/,
-        include: [ path.join(__dirname, 'client', 'scripts'), path.join(__dirname, 'common') ],
+        include: [path.join(__dirname, 'client', 'scripts'), path.join(__dirname, 'common')],
         use: {
           loader: 'tslint-loader',
           options: {
@@ -23,7 +23,7 @@ const webpackConfig = {
       },
       {
         test: /\.css$/,
-        include: [ path.join(__dirname, 'client', 'styles') ],
+        include: [path.join(__dirname, 'client')],
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -40,7 +40,7 @@ const webpackConfig = {
       },
       {
         test: /\.tsx?$/,
-        include: [ path.join(__dirname, 'client', 'scripts'), path.join(__dirname, 'common') ],
+        include: [path.join(__dirname, 'client', 'scripts'), path.join(__dirname, 'common')],
         use: {
           loader: 'ts-loader',
           options: {
@@ -50,11 +50,16 @@ const webpackConfig = {
             }
           }
         }
+      },
+      {
+        test:  /\.(png|svg|jpg|gif)$/,
+        include: [path.join(__dirname, 'client', 'images')],
+        loader: 'file-loader'
       }
     ]
   },
 
-  entry: [ './client/scripts/index.tsx' ],
+  entry: ['./client/scripts/index.tsx'],
 
   output: {
     filename: isDev ? 'app.[hash].js' : 'app.[hash].min.js',
@@ -66,13 +71,13 @@ const webpackConfig = {
   context: __dirname,
 
   resolve: {
-    extensions: [ '.js', '.jsx', '.ts', '.tsx', '.css', 'scss' ]
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', 'scss']
   },
 
   devtool: isDev && 'inline-source-map',
 
   plugins: [
-    new CleanWebpackPlugin([ 'public' ], {
+    new CleanWebpackPlugin(['public'], {
       root: path.join(__dirname, 'build'),
       verbose: true
     }),
