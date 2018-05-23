@@ -5,7 +5,7 @@ import MoveUtil from '../../../../server/util/move-util';
 import { expect, use } from 'chai';
 import TestUtil from '../../../test-util';
 import { Move } from '../../../../common/types';
-import Board from '../../../../common/Board';
+import Board from '../../../../common/board';
 import * as sinon from 'sinon';
 import * as sinonChai from 'sinon-chai';
 

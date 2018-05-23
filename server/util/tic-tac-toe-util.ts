@@ -1,5 +1,5 @@
 import { Line, Move, Player } from '../../common/types';
-import Board from '../../common/Board';
+import Board from '../../common/board';
 
 /**
  * A Util class for useful methods generally related to dealing with the

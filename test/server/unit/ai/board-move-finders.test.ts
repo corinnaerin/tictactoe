@@ -1,10 +1,11 @@
 /* tslint:disable only-arrow-functions */
 /* tslint:disable no-invalid-this */
-import Board from '../../../../common/Board';
+import Board from '../../../../common/board';
 import { expect } from 'chai';
 import { Move, Player } from '../../../../common/types';
 import { middleSquare, randomSquare } from '../../../../server/ai/board-move-finders';
 import TestUtil from '../../../test-util';
+import BoardUtil from '../../../../common/board-util';
 
 describe('Board-based move finders', function() {
   describe('middle square move finder', function() {
@@ -48,7 +49,7 @@ describe('Board-based move finders', function() {
 
     it('should return a random valid move if there are open squares', function() {
       TestUtil.assertRandomEquitableDistribution(() => {
-        const move: Move = randomSquare(TestUtil.EMPTY_BOARD);
+        const move: Move = randomSquare(BoardUtil.EMPTY_BOARD);
         expect(move).to.exist;
         return move;
       }, 9);

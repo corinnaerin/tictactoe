@@ -1,5 +1,5 @@
 import { Line, Move, MoveFinder } from '../../common/types';
-import Board from '../../common/Board';
+import Board from '../../common/board';
 import TicTacToeUtil from './tic-tac-toe-util';
 import createError = require('http-errors');
 

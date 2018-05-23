@@ -1,5 +1,5 @@
 import { Move, MoveFinder, Player } from '../../common/types';
-import Board from '../../common/Board';
+import Board from '../../common/board';
 import { emptyRowAndColumn, middleSquare, randomSquare } from './board-move-finders';
 import { firstInLine, lastInLine, secondInLine, winningMove } from './line-move-finders';
 import MoveUtil from '../util/move-util';

@@ -1,6 +1,6 @@
 /* tslint:disable only-arrow-functions */
 /* tslint:disable no-invalid-this */
-import Board from '../../../../../common/Board';
+import Board from '../../../../../common/board';
 import TestUtil from '../../../../test-util';
 import TicTacToeUtil from '../../../../../server/util/tic-tac-toe-util';
 import { expect } from 'chai';

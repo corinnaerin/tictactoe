@@ -1,6 +1,6 @@
 /* tslint:disable only-arrow-functions */
 /* tslint:disable no-invalid-this */
-import Board from '../../common/Board';
+import Board from '../../common/board';
 import { expect } from 'chai';
 import { Player } from '../../common/types';
 

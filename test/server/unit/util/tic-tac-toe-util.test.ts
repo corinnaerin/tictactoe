@@ -1,10 +1,11 @@
 /* tslint:disable only-arrow-functions */
 /* tslint:disable no-invalid-this */
 import { Line, Player } from '../../../../common/types';
-import Board from '../../../../common/Board';
+import Board from '../../../../common/board';
 import { expect } from 'chai';
 import TicTacToeUtil from '../../../../server/util/tic-tac-toe-util';
 import TestUtil from '../../../test-util';
+import BoardUtil from '../../../../common/board-util';
 
 describe('TicTacToeUtil', function() {
   describe('findWinner', function() {
@@ -70,7 +71,7 @@ describe('TicTacToeUtil', function() {
   });
 
   it('should determine if a board has empty squares', function() {
-    expect(TicTacToeUtil.boardHasEmptySquares(TestUtil.EMPTY_BOARD)).to.be.true;
+    expect(TicTacToeUtil.boardHasEmptySquares(BoardUtil.EMPTY_BOARD)).to.be.true;
     expect(TicTacToeUtil.boardHasEmptySquares(TestUtil.CATS_GAME)).to.be.false;
   });
 

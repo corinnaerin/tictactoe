@@ -1,6 +1,6 @@
 import { NextFunction, Request, RequestHandler, Response } from 'express';
 import createError = require('http-errors');
-import Board from '../../common/Board';
+import Board from '../../common/board';
 
 const parseInput: RequestHandler = (req: Request, res: Response, next: NextFunction) => {
   try {

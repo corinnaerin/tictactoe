@@ -1,19 +1,11 @@
 import { Line, Move, Player } from '../common/types';
-import Board from '../common/Board';
+import Board from '../common/board';
 import RandomUtil from '../server/util/random-util';
 import { expect } from 'chai';
 import server from '../server/server';
 import * as request from 'supertest';
 
 export default class TestUtil {
-
-  public static EMPTY_BOARD_RAW = [
-    [ Player.None, Player.None, Player.None ],
-    [ Player.None, Player.None, Player.None ],
-    [ Player.None, Player.None, Player.None ]
-  ];
-
-  public static EMPTY_BOARD = new Board(TestUtil.EMPTY_BOARD_RAW);
 
   public static CATS_GAME_RAW = [
     [Player.User, Player.AI, Player.AI],

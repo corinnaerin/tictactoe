@@ -1,5 +1,5 @@
 import { BoardMoveFinder, Move, Player } from '../../common/types';
-import Board from '../../common/Board';
+import Board from '../../common/board';
 import RandomUtil from '../util/random-util';
 import TicTacToeUtil from '../util/tic-tac-toe-util';
 

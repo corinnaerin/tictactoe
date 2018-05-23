@@ -1,4 +1,4 @@
-import Board from './Board';
+import Board from './board';
 
 export enum Player {
   User = 1,

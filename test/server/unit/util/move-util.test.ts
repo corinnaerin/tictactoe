@@ -1,7 +1,7 @@
 /* tslint:disable only-arrow-functions */
 /* tslint:disable no-invalid-this */
 import { MoveFinder } from '../../../../common/types';
-import Board from '../../../../common/Board';
+import Board from '../../../../common/board';
 import MoveUtil from '../../../../server/util/move-util';
 import { expect, use } from 'chai';
 import * as sinon from 'sinon';

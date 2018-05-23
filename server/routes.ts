@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import Board from '../common/Board';
+import Board from '../common/board';
 import TicTacToeUtil from './util/tic-tac-toe-util';
 import { Move, MoveAPIResponse, Player, WinnerAPIResponse } from '../common/types';
 import AI from './ai/ai';
