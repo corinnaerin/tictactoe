@@ -4,6 +4,7 @@
     "jsx": "react"
   },
   "include": [
-    "client"
+    "client",
+    "common"
   ]
 }

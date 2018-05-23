@@ -11,7 +11,7 @@ const webpackConfig = {
     rules: [
       {
         test: /\.tsx?$/,
-        include: [ path.join(__dirname, 'client', 'scripts') ],
+        include: [ path.join(__dirname, 'client', 'scripts'), path.join(__dirname, 'common') ],
         use: {
           loader: 'tslint-loader',
           options: {
@@ -40,7 +40,7 @@ const webpackConfig = {
       },
       {
         test: /\.tsx?$/,
-        include: [ path.join(__dirname, 'client', 'scripts') ],
+        include: [ path.join(__dirname, 'client', 'scripts'), path.join(__dirname, 'common') ],
         use: {
           loader: 'ts-loader',
           options: {
@@ -54,7 +54,7 @@ const webpackConfig = {
     ]
   },
 
-  entry: [ './client/scripts/index.ts' ],
+  entry: [ './client/scripts/index.tsx' ],
 
   output: {
     filename: isDev ? 'app.[hash].js' : 'app.[hash].min.js',
