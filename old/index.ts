@@ -1,7 +1,7 @@
 import Game from './Game';
-import Board from './Board';
+import Board from '../common/board';
 import CoordinatesHelper from './CoordinatesHelper';
-require('../styles/styles.css');
+require('../client/styles/styles.css');
 
 class TicTacToe {
   private readonly canvas: HTMLCanvasElement;

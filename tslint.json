@@ -81,6 +81,7 @@
     "semicolon": [ true, "always" ],
     "no-var-keyword": true,
     "no-implicit-dependencies": [ true, "dev" ],
+    "no-submodule-imports": false,
     "member-ordering": [ true, {
       "order": [
         "public-static-field",

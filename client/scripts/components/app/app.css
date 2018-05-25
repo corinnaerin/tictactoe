@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.body-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}

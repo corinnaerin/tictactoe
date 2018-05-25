@@ -1,0 +1,11 @@
+.ERROR {
+  background-color: rgba(212, 5, 0, .7);
+}
+
+.INFO {
+  background-color: rgba(0, 188, 212, .7);
+}
+
+.WARNING {
+  background-color: rgba(255, 143, 0, .7);
+}

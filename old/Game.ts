@@ -1,4 +1,4 @@
-import Board from './Board';
+import Board from '../common/board';
 
 class Game {
   public winner: number;
