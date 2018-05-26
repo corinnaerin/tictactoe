@@ -38,7 +38,7 @@ const webpackConfig = {
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: isDev ? '[name]__[local}' : '[name]__[local]___[chunkhash]',
+              localIdentName: isDev ? '[name]__[local]' : '[name]__[local]___[chunkhash]',
               minimize: !isDev,
               sourceMap: isDev
             }
