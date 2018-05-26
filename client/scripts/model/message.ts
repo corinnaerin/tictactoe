@@ -1,5 +1,5 @@
 export type MessageType =
-    'INFO' | 'ERROR' | 'WARNING';
+    'info' | 'error' | 'warning';
 
 export interface Message {
   type?: MessageType;

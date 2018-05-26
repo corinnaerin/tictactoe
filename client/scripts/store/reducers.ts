@@ -70,7 +70,7 @@ const requestFailure: ActionHandler = (state: ApplicationState, action: Action):
     ...state,
     isFetching: false,
     message: {
-      type: 'ERROR',
+      type: 'error',
       message: action.error
     }
   };

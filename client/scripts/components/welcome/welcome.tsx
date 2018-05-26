@@ -1,11 +1,10 @@
 import * as React from 'react';
-import Paper from 'material-ui/Paper';
 
 const styles = require('./welcome.css');
 
 const welcome: React.StatelessComponent = () => {
   return (
-      <Paper className={styles.paper} style={{backgroundColor: '#eee'}} zDepth={4}>
+      <section className={styles.paper}>
         <h1>Enter the dungeon if you dare...</h1>
         <section>
           The risks are great but the rewards are also. The fabled key to immortality
@@ -14,7 +13,7 @@ const welcome: React.StatelessComponent = () => {
           will never see the light of day again. Succeed, and the sun will never set
           on your time on earth.
         </section>
-      </Paper>
+      </section>
   );
 };
 
