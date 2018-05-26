@@ -1,5 +1,5 @@
 import Game from './Game';
-import Board from '../common/board';
+import Board from './board';
 import CoordinatesHelper from './CoordinatesHelper';
 require('../client/styles/styles.css');
 

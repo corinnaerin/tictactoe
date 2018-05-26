@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RandomUtil | TicTacToe Dungeon</title>
+	<title>ApplicationState | TicTacToe Dungeon</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,13 +54,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_server_util_random_util_.html">&quot;server/util/random-util&quot;</a>
+					<a href="../modules/_client_scripts_model_application_state_.html">&quot;client/scripts/model/application-state&quot;</a>
 				</li>
 				<li>
-					<a href="_server_util_random_util_.randomutil.html">RandomUtil</a>
+					<a href="_client_scripts_model_application_state_.applicationstate.html">ApplicationState</a>
 				</li>
 			</ul>
-			<h1>Class RandomUtil</h1>
+			<h1>Interface ApplicationState</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">RandomUtil</span>
+						<span class="target">ApplicationState</span>
 					</li>
 				</ul>
 			</section>
@@ -80,96 +80,91 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_server_util_random_util_.randomutil.html#chooserandomelement" class="tsd-kind-icon">choose<wbr>Random<wbr>Element</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_server_util_random_util_.randomutil.html#getrandombool" class="tsd-kind-icon">get<wbr>Random<wbr>Bool</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_server_util_random_util_.randomutil.html#getrandomint" class="tsd-kind-icon">get<wbr>Random<wbr>Int</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_client_scripts_model_application_state_.applicationstate.html#board" class="tsd-kind-icon">board</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_client_scripts_model_application_state_.applicationstate.html#difficulty" class="tsd-kind-icon">difficulty</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_client_scripts_model_application_state_.applicationstate.html#firstplayer" class="tsd-kind-icon">first<wbr>Player</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_client_scripts_model_application_state_.applicationstate.html#gameinprogress" class="tsd-kind-icon">game<wbr>InProgress</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_client_scripts_model_application_state_.applicationstate.html#isfetching" class="tsd-kind-icon">is<wbr>Fetching</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_client_scripts_model_application_state_.applicationstate.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_client_scripts_model_application_state_.applicationstate.html#winner" class="tsd-kind-icon">winner</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="chooserandomelement" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> choose<wbr>Random<wbr>Element</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">choose<wbr>Random<wbr>Element<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/8999a58/server/util/random-util.ts#L25">server/util/random-util.ts:25</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Choose a random element from the array</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>arr: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="board" class="tsd-anchor"></a>
+					<h3>board</h3>
+					<div class="tsd-signature tsd-kind-icon">board<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Board</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/8999a58/client/scripts/model/application-state.ts#L8">client/scripts/model/application-state.ts:8</a></li>
+						</ul>
+					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="getrandombool" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Random<wbr>Bool</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Random<wbr>Bool<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/8999a58/server/util/random-util.ts#L6">server/util/random-util.ts:6</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Return a random boolean</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="difficulty" class="tsd-anchor"></a>
+					<h3>difficulty</h3>
+					<div class="tsd-signature tsd-kind-icon">difficulty<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Difficulty</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/8999a58/client/scripts/model/application-state.ts#L9">client/scripts/model/application-state.ts:9</a></li>
+						</ul>
+					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="getrandomint" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Random<wbr>Int</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Random<wbr>Int<span class="tsd-signature-symbol">(</span>max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/8999a58/server/util/random-util.ts#L16">server/util/random-util.ts:16</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get a random integer between [0,max)
-									Max is exclusive</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>max: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="firstplayer" class="tsd-anchor"></a>
+					<h3>first<wbr>Player</h3>
+					<div class="tsd-signature tsd-kind-icon">first<wbr>Player<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Player</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/8999a58/client/scripts/model/application-state.ts#L7">client/scripts/model/application-state.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gameinprogress" class="tsd-anchor"></a>
+					<h3>game<wbr>InProgress</h3>
+					<div class="tsd-signature tsd-kind-icon">game<wbr>InProgress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/8999a58/client/scripts/model/application-state.ts#L6">client/scripts/model/application-state.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="isfetching" class="tsd-anchor"></a>
+					<h3>is<wbr>Fetching</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Fetching<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/8999a58/client/scripts/model/application-state.ts#L11">client/scripts/model/application-state.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="message" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> message</h3>
+					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <a href="_client_scripts_model_message_.message.html" class="tsd-signature-type">Message</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/8999a58/client/scripts/model/application-state.ts#L12">client/scripts/model/application-state.ts:12</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="winner" class="tsd-anchor"></a>
+					<h3>winner</h3>
+					<div class="tsd-signature tsd-kind-icon">winner<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Player</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/8999a58/client/scripts/model/application-state.ts#L10">client/scripts/model/application-state.ts:10</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -180,7 +175,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_server_util_random_util_.html">"server/util/random-<wbr>util"</a>
+						<a href="../modules/_client_scripts_model_application_state_.html">"client/scripts/model/application-<wbr>state"</a>
 					</li>
 				</ul>
 			</nav>
@@ -188,17 +183,29 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_server_util_random_util_.randomutil.html" class="tsd-kind-icon">Random<wbr>Util</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_client_scripts_model_application_state_.applicationstate.html" class="tsd-kind-icon">Application<wbr>State</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_server_util_random_util_.randomutil.html#chooserandomelement" class="tsd-kind-icon">choose<wbr>Random<wbr>Element</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_client_scripts_model_application_state_.applicationstate.html#board" class="tsd-kind-icon">board</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_server_util_random_util_.randomutil.html#getrandombool" class="tsd-kind-icon">get<wbr>Random<wbr>Bool</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_client_scripts_model_application_state_.applicationstate.html#difficulty" class="tsd-kind-icon">difficulty</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_server_util_random_util_.randomutil.html#getrandomint" class="tsd-kind-icon">get<wbr>Random<wbr>Int</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_client_scripts_model_application_state_.applicationstate.html#firstplayer" class="tsd-kind-icon">first<wbr>Player</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_client_scripts_model_application_state_.applicationstate.html#gameinprogress" class="tsd-kind-icon">game<wbr>InProgress</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_client_scripts_model_application_state_.applicationstate.html#isfetching" class="tsd-kind-icon">is<wbr>Fetching</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_client_scripts_model_application_state_.applicationstate.html#message" class="tsd-kind-icon">message</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_client_scripts_model_application_state_.applicationstate.html#winner" class="tsd-kind-icon">winner</a>
 							</li>
 						</ul>
 					</li>
