@@ -5,6 +5,7 @@
   },
   "include": [
     "client",
+    "common",
     "server"
   ]
 }

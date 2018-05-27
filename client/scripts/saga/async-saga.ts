@@ -4,28 +4,28 @@ import * as Redux from 'redux';
 import { takeEvery } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 
-export default class AsyncSaga {
+export default class AsyncSaga<S, T> {
   private readonly requestActionType: string;
   private readonly successActionType: string;
   private readonly failureActionType: string;
-  private readonly asyncFunc: (input?: any) => Promise<any>;
+  private readonly asyncFunc: (input?: S) => Promise<T>;
 
   constructor(requestActionType: string, successActionType: string,
-              failureActionType: string, asyncFunc: (input?: any) => Promise<any>) {
+              failureActionType: string, asyncFunc: (input?: S) => Promise<T>) {
     this.requestActionType = requestActionType;
     this.successActionType = successActionType;
     this.failureActionType = failureActionType;
     this.asyncFunc = asyncFunc;
   }
 
-  public getRequestAction(input: any): Action {
+  public getRequestAction(input: S): Action {
     return {
       input,
       type: this.requestActionType
     };
   }
 
-  public getSuccessAction(input: any, data: any): Action {
+  public getSuccessAction(input: S, data: T): Action {
     return {
       data,
       input,
@@ -33,7 +33,7 @@ export default class AsyncSaga {
     };
   }
 
-  public getFailureAction(input: any, error: string): Action {
+  public getFailureAction(input: S, error: string): Action {
     return {
       error,
       input,
@@ -62,7 +62,7 @@ export default class AsyncSaga {
     yield takeEvery(this.requestActionType, this.handle.bind(this));
   }
 
-  public trigger(store: Redux.Store<ApplicationState>, input?: any): void {
+  public trigger(store: Redux.Store<ApplicationState>, input?: S): void {
     store.dispatch(this.getRequestAction(input));
   }
 }

@@ -2,8 +2,7 @@ import Action from '../model/action';
 import ApplicationState from '../model/application-state';
 import { Difficulty, Player } from '../../../common/types';
 import BoardUtil from '../../../common/board-util';
-
-type ActionHandler = (state: ApplicationState, action: Action) => ApplicationState;
+import * as Redux from 'redux';
 
 export const INITIAL_STATE: ApplicationState = {
   gameInProgress: false,
@@ -11,61 +10,63 @@ export const INITIAL_STATE: ApplicationState = {
   firstPlayer: Player.User,
   difficulty: Difficulty.Easy,
   winner: Player.None,
-  isFetching: false
+  isFetching: false,
+  showGameConfig: false,
+  showGameBoard: false,
+  userIcon: '\uD83E\uDDD9'
 };
 
-const getWinnerSuccess: ActionHandler = (state: ApplicationState, action: Action): ApplicationState => {
-  return {
-    ...state,
-    gameInProgress: action.data === Player.None,
-    winner: action.data
-  };
-};
-
-const getMoveSuccess: ActionHandler = (state: ApplicationState, action: Action): ApplicationState => {
+const getWinnerSuccess: Redux.Reducer<ApplicationState> = (state: ApplicationState, action: Action): ApplicationState => {
   return {
     ...state,
     gameInProgress: action.data.winner === Player.None,
-    board: BoardUtil.makeMoveImmutable(state.board, action.data.move, Player.AI)
+    winner: action.data.winner,
+    board: action.input.board,
+    turn: Player.AI,
+    lastMove: action.input.move,
+    isFetching: false
   };
 };
 
-const userMove: ActionHandler = (state: ApplicationState, action: Action): ApplicationState => {
+const getMoveSuccess: Redux.Reducer<ApplicationState> = (state: ApplicationState, action: Action): ApplicationState => {
   return {
     ...state,
-    board: BoardUtil.makeMoveImmutable(state.board, action.data, Player.User)
+    gameInProgress: action.data.winner === Player.None,
+    turn: Player.User,
+    lastMove: action.data.move,
+    winner: action.data.winner,
+    board: BoardUtil.makeMoveImmutable(state.board, action.data.move, Player.AI),
+    isFetching: false
   };
 };
 
-const setDifficulty: ActionHandler = (state: ApplicationState, action: Action): ApplicationState => {
+const setDifficulty: Redux.Reducer<ApplicationState> = (state: ApplicationState, action: Action): ApplicationState => {
   return {
     ...state,
     difficulty: action.data
   };
 };
 
-const startGame: ActionHandler = (state: ApplicationState, action: Action): ApplicationState => {
+const startGame: Redux.Reducer<ApplicationState> = (state: ApplicationState): ApplicationState => {
   return {
     ...state,
-    gameInProgress: true
+    showGameBoard: true,
+    gameInProgress: true,
+    lastMove: null,
+    board: BoardUtil.EMPTY_BOARD,
+    turn: state.firstPlayer,
+    winner: Player.None
   };
 };
 
-const requestStart: ActionHandler = (state: ApplicationState, action: Action): ApplicationState => {
+const requestStart: Redux.Reducer<ApplicationState> = (state: ApplicationState): ApplicationState => {
   return {
     ...state,
     isFetching: true
   };
 };
 
-const requestSuccess: ActionHandler = (state: ApplicationState, action: Action): ApplicationState => {
-  return {
-    ...state,
-    isFetching: true
-  };
-};
-
-const requestFailure: ActionHandler = (state: ApplicationState, action: Action): ApplicationState => {
+const requestFailure: Redux.Reducer<ApplicationState> = (state: ApplicationState, action: Action): ApplicationState => {
   return {
     ...state,
     isFetching: false,
@@ -76,39 +77,62 @@ const requestFailure: ActionHandler = (state: ApplicationState, action: Action):
   };
 };
 
-const clearMessage: ActionHandler = (state: ApplicationState, action: Action): ApplicationState => {
+const clearMessage: Redux.Reducer<ApplicationState> = (state: ApplicationState): ApplicationState => {
   return {
     ...state,
     message: null
   };
 };
 
-const ACTION_HANDLERS: Map<string, ActionHandler[]> = new Map<string, ActionHandler[]>([
-  ['GET_MOVE_REQUEST', [requestStart]],
-  ['GET_MOVE_SUCCESS', [requestSuccess, getMoveSuccess]],
-  ['GET_MOVE_FAILURE', [requestFailure]],
-  ['GET_WINNER_REQUEST', [requestStart]],
-  ['GET_WINNER_SUCCESS', [requestSuccess, getWinnerSuccess]],
-  ['GET_WINNER_FAILURE', [requestFailure]],
-  ['MAKE_USER_MOVE', [userMove]],
-  ['SET_DIFFICULTY', [setDifficulty]],
-  ['START_GAME', [startGame]],
-  ['CLEAR_MESSAGE', [clearMessage]]
-]);
+const setMessage: Redux.Reducer<ApplicationState> = (state: ApplicationState, action: Action): ApplicationState => {
+  return {
+    ...state,
+    message: action.data
+  };
+};
 
-export const reducer = (state: ApplicationState = INITIAL_STATE, action: Action): ApplicationState => {
-  const actionHandlers = ACTION_HANDLERS.get(action.type);
+const setShowGameConfig: Redux.Reducer<ApplicationState> = (state: ApplicationState, action: Action): ApplicationState => {
+  return {
+    ...state,
+    showGameConfig: action.data
+  };
+};
 
-  if (Array.isArray(actionHandlers)) {
-    return actionHandlers
-        .map(actionHandler => actionHandler(state, action))
-        .reduce((prevState, currentState) => {
-          return {
-            ...prevState,
-            ...currentState
-          };
-        });
+const setUserIcon: Redux.Reducer<ApplicationState> = (state: ApplicationState, action: Action): ApplicationState => {
+  return {
+    ...state,
+    userIcon: action.data
+  };
+};
+
+interface ReducerMap {
+  [actionType: string]: Redux.Reducer<ApplicationState>;
+}
+
+const reducers: ReducerMap = {
+  GET_MOVE_REQUEST: requestStart,
+  GET_MOVE_SUCCESS: getMoveSuccess,
+  GET_MOVE_FAILURE: requestFailure,
+  GET_WINNER_REQUEST: requestStart,
+  GET_WINNER_SUCCESS: getWinnerSuccess,
+  GET_WINNER_FAILURE: requestFailure,
+  SET_DIFFICULTY: setDifficulty,
+  START_GAME: startGame,
+  CLEAR_MESSAGE: clearMessage,
+  SET_MESSAGE: setMessage,
+  SET_SHOW_GAME_CONFIG: setShowGameConfig,
+  SET_USER_ICON: setUserIcon
+};
+
+export const universalReducer: Redux.Reducer<ApplicationState> = (state: ApplicationState = INITIAL_STATE, action: Action): ApplicationState => {
+  const matchingReducer = reducers[action.type];
+
+  if (typeof matchingReducer === 'function') {
+    return matchingReducer(state, action);
   }
 
+  if (action.type !== '@@INIT') {
+    console.warn(`No reducer registered for action type ${action.type}`);
+  }
   return state;
 };

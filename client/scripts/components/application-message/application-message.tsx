@@ -1,26 +1,37 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Message } from '../../model/message';
-import ApplicationState from '../../model/application-state';
 import * as Redux from 'redux';
 
 const styles = require('./application-message.css');
 
 interface StateProps {
+  /**
+   * The message to display
+   */
   message: Message;
 }
 
 interface DispatchProps {
+  /**
+   * The click handler to dismiss the message
+   */
   dismiss: React.MouseEventHandler<HTMLElement>;
 }
 
 interface Props extends StateProps, DispatchProps {}
 
-const applicationMessage: React.StatelessComponent<Props> = (props: Props) => {
-  const hasMessage = !!props.message && !!props.message.message;
+/**
+ * A component to display an application-wide message
+ * @param {Props} props
+ * @returns {JSX.Element}
+ */
+const ApplicationMessage: React.StatelessComponent<Props> = ({ message, dismiss }): JSX.Element => {
+  const hasMessage = !!message && !!message.message;
+  const type = message.type || 'info';
   const classes = [
     styles.message,
-    styles[props.message.type]
+    styles[type]
   ];
   if (!hasMessage) {
     classes.push(styles.hide);
@@ -28,16 +39,16 @@ const applicationMessage: React.StatelessComponent<Props> = (props: Props) => {
 
   return (
       <section className={classes.join(' ')}>
-        <i className={'material-icons ' + styles.icon}>{props.message.type}</i>
-        <span>{props.message && props.message.message}</span>
-        <i className={'material-icons ' + styles.dismiss} onClick={props.dismiss}>clear</i>
+        <i className={'material-icons ' + styles.icon}>{type}</i>
+        <span>{message && message.message}</span>
+        <i className={'material-icons ' + styles.dismiss} onClick={dismiss}>clear</i>
       </section>
   );
 };
 
 const mapDispatchToProps = (dispatch: Redux.Dispatch): DispatchProps => {
   return {
-    dismiss: (e: React.MouseEvent<HTMLElement>) => {
+    dismiss: () => {
       dispatch({
         type: 'CLEAR_MESSAGE'
       });
@@ -45,10 +56,8 @@ const mapDispatchToProps = (dispatch: Redux.Dispatch): DispatchProps => {
   };
 };
 
-const mapStateToProps = (store: ApplicationState) => {
-  return {
-    message: store.message || {}
-  };
+const mapStateToProps = ({message}): StateProps => {
+  return message ? { message } : { message: {} };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(applicationMessage);
+export default connect(mapStateToProps, mapDispatchToProps)(ApplicationMessage);

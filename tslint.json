@@ -72,7 +72,7 @@
         "allowSingleLine": true
       }
     ],
-    "variable-name": true,
+    "variable-name": false,
     "eofline": false,
     "ter-func-call-spacing": true,
     "keyword-spacing": false,
@@ -82,6 +82,7 @@
     "no-var-keyword": true,
     "no-implicit-dependencies": [ true, "dev" ],
     "no-submodule-imports": false,
+    "jsx-no-multiline-js": false,
     "member-ordering": [ true, {
       "order": [
         "public-static-field",

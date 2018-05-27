@@ -1,0 +1,20 @@
+.group {
+  margin: 5px;
+}
+
+.groupLabel {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+}
+
+.label {
+  font-size: 1em;
+  display: inline-block;
+  padding: 5px;
+}
+
+.secondary {
+  color: #888;
+  font-size: 0.7em;
+  margin-left: 5px;
+}
