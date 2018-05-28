@@ -67,6 +67,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A class to call the winner API</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -94,16 +101,33 @@
 					<a name="getwinner" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Winner</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Winner<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">WinnerAPIResponse</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Winner<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><a href="../interfaces/_client_scripts_api_winner_api_.clientwinnerapirequest.html" class="tsd-signature-type">ClientWinnerAPIRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_common_types_.winnerapiresponse.html" class="tsd-signature-type">WinnerAPIResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/3716f64/client/scripts/api/winner-api.ts#L7">client/scripts/api/winner-api.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/1e07d91/client/scripts/api/winner-api.ts#L30">client/scripts/api/winner-api.ts:30</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">WinnerAPIResponse</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the winner (if any) for the given board.
+										The move is a required input here even though it&#39;s not sent to the server,
+									because it is then passed by AsyncSaga to the success reducer to update the state</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>input: <a href="../interfaces/_client_scripts_api_winner_api_.clientwinnerapirequest.html" class="tsd-signature-type">ClientWinnerAPIRequest</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the board and current move</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_common_types_.winnerapiresponse.html" class="tsd-signature-type">WinnerAPIResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>the winner of the game</p>
 						</li>
 					</ul>
 				</section>
@@ -134,8 +158,11 @@
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_client_scripts_api_winner_api_.clientwinnerapirequest.html" class="tsd-kind-icon">Client<wbr>WinnerAPIRequest</a>
+					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_client_scripts_api_winner_api_.html#hostname" class="tsd-kind-icon">HOSTNAME</a>
+						<a href="../modules/_client_scripts_api_winner_api_.html#route" class="tsd-kind-icon">ROUTE</a>
 					</li>
 				</ul>
 			</nav>
