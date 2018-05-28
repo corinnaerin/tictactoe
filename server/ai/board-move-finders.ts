@@ -1,4 +1,4 @@
-import { BoardMoveFinder, Move, Player } from '../../common/types';
+import { Move, Player } from '../../common/types';
 import Board from '../../common/board';
 import RandomUtil from '../util/random-util';
 import TicTacToeUtil from '../util/tic-tac-toe-util';
@@ -7,7 +7,7 @@ import TicTacToeUtil from '../util/tic-tac-toe-util';
  * A simple board move finder that checks if we can move in the middle space
  * @param {Board} board
  */
-export const middleSquare: BoardMoveFinder = (board: Board): Move => {
+export function middleSquare(board: Board): Move {
   const middleSquareMove: Move = {
     row: 1,
     column: 1
@@ -15,7 +15,7 @@ export const middleSquare: BoardMoveFinder = (board: Board): Move => {
   if (TicTacToeUtil.isValidMove(board, middleSquareMove)) {
     return middleSquareMove;
   }
-};
+}
 
 /**
  * A totally unintelligent board move finder that just randomly
@@ -23,7 +23,7 @@ export const middleSquare: BoardMoveFinder = (board: Board): Move => {
  * @param {Board} board
  * @returns {Move}
  */
-export const randomSquare: BoardMoveFinder = (board: Board): Move => {
+export function randomSquare(board: Board): Move {
   const validMoves: Move[] = [];
 
   board.getRows().forEach((line, row) => {
@@ -39,7 +39,7 @@ export const randomSquare: BoardMoveFinder = (board: Board): Move => {
   }
 
   return RandomUtil.chooseRandomElement(validMoves);
-};
+}
 
 /**
  * Picks a square that is empty both in its row and column. We don't
@@ -48,7 +48,7 @@ export const randomSquare: BoardMoveFinder = (board: Board): Move => {
  * @param {Board} board
  * @returns {Move}
  */
-export const emptyRowAndColumn: BoardMoveFinder = (board: Board): Move => {
+export function emptyRowAndColumn(board: Board): Move {
 
   const emptyColumns = TicTacToeUtil.getEmptyColumns(board);
   const emptyRows = TicTacToeUtil.getEmptyRows(board);
@@ -61,4 +61,4 @@ export const emptyRowAndColumn: BoardMoveFinder = (board: Board): Move => {
       }
     }
   }
-};
+}

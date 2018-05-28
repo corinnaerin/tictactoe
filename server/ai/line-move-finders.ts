@@ -1,4 +1,4 @@
-import { Line, LineMoveFinder, Player } from '../../common/types';
+import { Line, Player } from '../../common/types';
 import TicTacToeUtil from '../util/tic-tac-toe-util';
 import RandomUtil from '../util/random-util';
 
@@ -14,14 +14,14 @@ import RandomUtil from '../util/random-util';
  * @param {Player.AI | Player.User} player
  * @returns {number}
  */
-export const winningMove: LineMoveFinder = (line: Line, player: Player.AI | Player.User): number => {
+export function winningMove(line: Line, player: Player.AI | Player.User): number {
   // If the given player already has 2 squares claimed, claim the third (if it's empty)
   if (TicTacToeUtil.getNumberSquaresClaimed(line, player) === 2) {
     return line.indexOf(Player.None);
   }
 
   return -1;
-};
+}
 
 /**
  * Returns an index in the line if it has exactly one square claimed by the given player and the
@@ -30,7 +30,7 @@ export const winningMove: LineMoveFinder = (line: Line, player: Player.AI | Play
  * @param {Player.AI | Player.User} player
  * @returns {number}
  */
-export const secondInLine: LineMoveFinder = (line: Line, player: Player.AI | Player.User): number => {
+export function secondInLine(line: Line, player: Player.AI | Player.User): number {
   if (TicTacToeUtil.getNumberSquaresClaimed(line, player) === 1 &&
       !TicTacToeUtil.checkForOpponent(line, player)) {
     if (line[1] === player) {
@@ -43,20 +43,20 @@ export const secondInLine: LineMoveFinder = (line: Line, player: Player.AI | Pla
   }
 
   return -1;
-};
+}
 
 /**
  * Returns a random index if the line is empty, or -1 if the line isn't empty
  * @param {Line} line
  * @returns {number}
  */
-export const firstInLine: LineMoveFinder = (line: Line): number => {
+export function firstInLine(line: Line): number {
   if (TicTacToeUtil.isLineEmpty(line)) {
     return RandomUtil.getRandomInt(3);
   }
 
   return -1;
-};
+}
 
 /**
  * Returns the index of the last open square in the line that isn't a winning move,
@@ -65,10 +65,12 @@ export const firstInLine: LineMoveFinder = (line: Line): number => {
  * @param {Player} player
  * @returns {number}
  */
-export const lastInLine: LineMoveFinder = (line: Line, player: Player.AI | Player.User): number => {
+export function lastInLine(line: Line, player: Player.AI | Player.User): number {
   if (TicTacToeUtil.getNumEmptySquares(line) === 1 &&
       TicTacToeUtil.getNumberSquaresClaimed(line, player) === 1 &&
       TicTacToeUtil.checkForOpponent(line, player)) {
     return line.indexOf(Player.None);
   }
-};
+
+  return -1;
+}
