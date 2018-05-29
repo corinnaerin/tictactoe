@@ -66,7 +66,7 @@ Link to documentation: www.corinnaerin.com/docs
 
 # Accessing the documentation
 
-You can access the documentation for the current release at https://corinnaerin.github.io/tictactoe/. To access the documentation
+You can access the documentation for the current release at www.corinnaerin.com/docs. To access the documentation
 for the checked-out local version, just open `build/public/docs/index.html` in your browser.
 
 # Deploying the app
