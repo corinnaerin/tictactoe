@@ -122,7 +122,7 @@ For details on the logic for each difficulty level, see `server/ai/ai.ts`.
 # Testing the app
 
 See below for useful tools to aid in manual testing of both the client & server code. You can (obviously)
-run the automated tests via `npm run test`, which includes unit & integration tests for the server. 
+run the automated tests via `npm test`, which includes unit & integration tests for the server. 
 A future step for front-end testing would be to add a Selenium test framework to do integration tests, 
 user-interaction tests, and cross-browser compatibility testing, as well as shallow rendering unit tests
 via enzyme. However, that is a significant time requirement that I'm unable to meet at this time, but 
@@ -154,7 +154,7 @@ provides power-ups for your Redux development workflow. Apart from Redux, it can
 
 * [React & Redux tutorial](https://css-tricks.com/learning-react-router/)
 * [Official React documentation](https://facebook.github.io/react/docs/getting-started.html)
-* [Official NodeJS documentation](https://nodejs.org/dist/latest-v4.x/docs/api/)
+* [Official NodeJS documentation](https://nodejs.org/dist/latest-v8.x/docs/api/)
 * [Official TypeScript documentation](https://www.typescriptlang.org/docs/tutorial.html)
 * [Official Redux documentation](http://redux.js.org/index.html)
 * [Official React Router documentation](https://reacttraining.com/react-router/)
