@@ -1,6 +1,6 @@
 /* tslint:disable only-arrow-functions */
 /* tslint:disable no-invalid-this */
-import { Line, Player } from '../../../../common/types';
+import { Line, Move, Player } from '../../../../common/types';
 import Board from '../../../../common/board';
 import { expect } from 'chai';
 import TicTacToeUtil from '../../../../server/util/tic-tac-toe-util';
@@ -104,5 +104,24 @@ describe('TicTacToeUtil', function() {
   it('should check if the moves are deeply equal', function() {
     expect(TicTacToeUtil.equalMoves({ row: 1, column: 1}, { row: 1, column: 1})).to.be.true;
     expect(TicTacToeUtil.equalMoves({ row: 1, column: 2}, { row: 1, column: 1})).to.be.false;
+  });
+
+  it('should identify a winning move', function() {
+    const board = new Board([
+      [Player.User, Player.AI, Player.User],
+      [Player.None, Player.User, Player.User],
+      [Player.User, Player.None, Player.AI]
+    ]);
+
+    const move: Move = {
+      row: 1,
+      column: 0
+    };
+
+    expect(TicTacToeUtil.isWinningMove(move, board, Player.User)).to.be.true;
+  });
+
+  it('should return false for an invalid move', function() {
+    expect(TicTacToeUtil.isWinningMove(TestUtil.getRandomMove(), TestUtil.CATS_GAME, Player.User)).to.be.false;
   });
 });

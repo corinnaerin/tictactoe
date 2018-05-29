@@ -39,4 +39,12 @@ describe('AI', function() {
     expect(this.getFirstPossibleMoveStub).to.have.been.calledOnce;
     expect(this.getFirstPossibleMoveStub).to.have.been.calledWithExactly(randomBoard, ...AI.MEDIUM_PREFERRED_MOVES);
   });
+
+  it('getEasyMove throw an exception if there are no available moves', function() {
+    expect(() => AI.getEasyMove(TestUtil.CATS_GAME)).to.throw(MoveUtil.NO_MOVE_FOUND);
+  });
+
+  it('getLunaMove throw an exception if there are no available moves', function() {
+    expect(() => AI.getLunaMove(TestUtil.CATS_GAME)).to.throw(MoveUtil.NO_MOVE_FOUND);
+  });
 });

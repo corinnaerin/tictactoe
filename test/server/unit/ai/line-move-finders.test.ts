@@ -1,6 +1,6 @@
 /* tslint:disable only-arrow-functions */
 /* tslint:disable no-invalid-this */
-import { winningMove, secondInLine, firstInLine } from '../../../../server/ai/line-move-finders';
+import { winningMove, secondInLine, firstInLine, lastInLine } from '../../../../server/ai/line-move-finders';
 import { expect, use } from 'chai';
 import { Line, Player } from '../../../../common/types';
 import TestUtil from '../../../test-util';
@@ -164,6 +164,43 @@ describe('Line-based move finders', function() {
       expect(this.isLineEmptyStub).to.have.been.calledOnce;
       expect(this.getRandomIntStub).to.have.been.calledOnce;
       expect(this.getRandomIntStub).to.have.been.calledWithExactly(3);
+    });
+  });
+
+  describe('last in line move finder', function() {
+    beforeEach(function() {
+      this.getNumEmptySquaresStub = sinon.stub(TicTacToeUtil, 'getNumEmptySquares');
+      this.getNumberSquaresClaimedStub = sinon.stub(TicTacToeUtil, 'getNumberSquaresClaimed');
+      this.checkForOpponentStub = sinon.stub(TicTacToeUtil, 'checkForOpponent');
+    });
+
+    it('should return the last open move in the line', function() {
+      this.getNumEmptySquaresStub.returns(1);
+      this.getNumberSquaresClaimedStub.returns(1);
+      this.checkForOpponentStub.returns(true);
+      const line: Line = [ Player.User, Player.AI, Player.None ];
+      expect(lastInLine(line, Player.AI)).to.eql(2);
+    });
+
+    it('should not return a move if the line is empty', function() {
+      this.getNumEmptySquaresStub.returns(0);
+      const line: Line = [ Player.User, Player.AI, Player.None ];
+      expect(lastInLine(line, Player.AI)).to.eql(-1);
+    });
+
+    it('should not return a move if the player has claimed more than 1 line', function() {
+      this.getNumEmptySquaresStub.returns(0);
+      this.getNumberSquaresClaimedStub.returns(2);
+      const line: Line = [ Player.User, Player.AI, Player.None ];
+      expect(lastInLine(line, Player.AI)).to.eql(-1);
+    });
+
+    it('should not return a move if the opponent is not present in the line', function() {
+      this.getNumEmptySquaresStub.returns(0);
+      this.getNumberSquaresClaimedStub.returns(1);
+      this.checkForOpponentStub.returns(false);
+      const line: Line = [ Player.User, Player.AI, Player.None ];
+      expect(lastInLine(line, Player.AI)).to.eql(-1);
     });
   });
 });
