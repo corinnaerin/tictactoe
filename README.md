@@ -122,9 +122,11 @@ For details on the logic for each difficulty level, see `server/ai/ai.ts`.
 # Testing the app
 
 See below for useful tools to aid in manual testing of both the client & server code. You can (obviously)
-run the automated tests via `npm run test`, which includes unit & integration tests for the server
-and unit tests for the client. A future step for front-end testing would be to add a Selenium test
-framework to do integration tests & user-interaction tests. 
+run the automated tests via `npm run test`, which includes unit & integration tests for the server. 
+A future step for front-end testing would be to add a Selenium test framework to do integration tests, 
+user-interaction tests, and cross-browser compatibility testing, as well as shallow rendering unit tests
+via enzyme. However, that is a significant time requirement that I'm unable to meet at this time, but 
+would consider vital for a real production application. 
 
 # Testing tools
 
