@@ -91,6 +91,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_server_ai_ai_.ai.html#geteasymove" class="tsd-kind-icon">get<wbr>Easy<wbr>Move</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_server_ai_ai_.ai.html#gethardmove" class="tsd-kind-icon">get<wbr>Hard<wbr>Move</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_server_ai_ai_.ai.html#getlunamove" class="tsd-kind-icon">get<wbr>Luna<wbr>Move</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_server_ai_ai_.ai.html#getmediummove" class="tsd-kind-icon">get<wbr>Medium<wbr>Move</a></li>
 							</ul>
 						</section>
@@ -105,7 +106,7 @@
 					<div class="tsd-signature tsd-kind-icon">HARD_<wbr>PREFERRED_<wbr>MOVES<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_common_types_.movefinder.html" class="tsd-signature-type">MoveFinder</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[{ // 1: A winning move for the AIlineMoveFinder: winningMove,args: [Player.AI]},{ // 2: Block a winning move for the userlineMoveFinder: winningMove,args: [Player.User]},{ // 3: Pick the middle square, since that gives the most possible ways to winboardMoveFinder: middleSquare},{ // 4: Pick a line that we already have one claimed inlineMoveFinder: secondInLine,args: Player.AI},{// 5: Pick a square that is empty in both row and columnboardMoveFinder: emptyRowAndColumn},{// 6: First in an empty line, randomly pick an open squarelineMoveFinder: firstInLine},{// 7: Last in the line (that isn&#x27;t a winning move)lineMoveFinder: lastInLine,args: Player.AI}]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/1e07d91/server/ai/ai.ts#L17">server/ai/ai.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/08f7add/server/ai/ai.ts#L17">server/ai/ai.ts:17</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -127,7 +128,7 @@
 					<div class="tsd-signature tsd-kind-icon">MEDIUM_<wbr>PREFERRED_<wbr>MOVES<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_common_types_.movefinder.html" class="tsd-signature-type">MoveFinder</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[{ // 1: A winning move for the AIlineMoveFinder: winningMove,args: [Player.AI]},{ // 2: Block a winning move for the userlineMoveFinder: winningMove,args: [Player.User]},{ // 3: Just randomly choose a valid moveboardMoveFinder: randomSquare}]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/1e07d91/server/ai/ai.ts#L55">server/ai/ai.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/08f7add/server/ai/ai.ts#L55">server/ai/ai.ts:55</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -157,7 +158,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/1e07d91/server/ai/ai.ts#L106">server/ai/ai.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/08f7add/server/ai/ai.ts#L106">server/ai/ai.ts:106</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -203,12 +204,41 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/1e07d91/server/ai/ai.ts#L74">server/ai/ai.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/08f7add/server/ai/ai.ts#L74">server/ai/ai.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Get the most optimal move available on the board</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>board: <a href="_common_board_.board.html" class="tsd-signature-type">Board</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_common_types_.move.html" class="tsd-signature-type">Move</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="getlunamove" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Luna<wbr>Move</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Luna<wbr>Move<span class="tsd-signature-symbol">(</span>board<span class="tsd-signature-symbol">: </span><a href="_common_board_.board.html" class="tsd-signature-type">Board</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_common_types_.move.html" class="tsd-signature-type">Move</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/08f7add/server/ai/ai.ts#L147">server/ai/ai.ts:147</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This just returns a random move every turn. Because it&#39;s Luna, and
+									who knows what she&#39;ll do next?</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -231,7 +261,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/1e07d91/server/ai/ai.ts#L83">server/ai/ai.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/08f7add/server/ai/ai.ts#L83">server/ai/ai.ts:83</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -280,6 +310,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
 								<a href="_server_ai_ai_.ai.html#gethardmove" class="tsd-kind-icon">get<wbr>Hard<wbr>Move</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="_server_ai_ai_.ai.html#getlunamove" class="tsd-kind-icon">get<wbr>Luna<wbr>Move</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
 								<a href="_server_ai_ai_.ai.html#getmediummove" class="tsd-kind-icon">get<wbr>Medium<wbr>Move</a>

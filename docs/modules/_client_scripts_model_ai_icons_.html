@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Winner | TicTacToe Dungeon</title>
+	<title>&quot;client/scripts/model/ai-icons&quot; | TicTacToe Dungeon</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,51 +54,104 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_common_types_.html">&quot;common/types&quot;</a>
-				</li>
-				<li>
-					<a href="_common_types_.winner.html">Winner</a>
+					<a href="_client_scripts_model_ai_icons_.html">&quot;client/scripts/model/ai-icons&quot;</a>
 				</li>
 			</ul>
-			<h1>Interface Winner</h1>
+			<h1>External module &quot;client/scripts/model/ai-icons&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<span class="target">Winner</span>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Properties</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_common_types_.winner.html#winner" class="tsd-kind-icon">winner</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_client_scripts_model_ai_icons_.html#getaiicon" class="tsd-kind-icon">get<wbr>AiIcon</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-not-exported"><a href="_client_scripts_model_ai_icons_.html#aiicons" class="tsd-kind-icon">ai<wbr>Icons</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="winner" class="tsd-anchor"></a>
-					<h3>winner</h3>
-					<div class="tsd-signature tsd-kind-icon">winner<span class="tsd-signature-symbol">:</span> <a href="../enums/_common_types_.player.html" class="tsd-signature-type">Player</a></div>
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="getaiicon" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>AiIcon</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>AiIcon<span class="tsd-signature-symbol">(</span>difficulty<span class="tsd-signature-symbol">: </span><a href="../enums/_common_types_.difficulty.html" class="tsd-signature-type">Difficulty</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/08f7add/client/scripts/model/ai-icons.ts#L22">client/scripts/model/ai-icons.ts:22</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the icon for the given difficulty</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>difficulty: <a href="../enums/_common_types_.difficulty.html" class="tsd-signature-type">Difficulty</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="aiicons" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> ai<wbr>Icons</h3>
+					<div class="tsd-signature tsd-kind-icon">ai<wbr>Icons<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/08f7add/common/types.ts#L14">common/types.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/08f7add/client/scripts/model/ai-icons.ts#L7">client/scripts/model/ai-icons.ts:7</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Map from the game difficulty to the icon to use for its moves</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{Map&lt;Difficulty, string&gt;}</p>
+							</dd>
+						</dl>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="aiicons.__computed" class="tsd-anchor"></a>
+						<h3>__computed</h3>
+						<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
+							<li class="tsd-signature tsd-kind-icon">__computed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						</ul>
+						<ul class="tsd-descriptions">
+							<li class="tsd-description">
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/corinnaerin/tictactoe/blob/08f7add/client/scripts/model/ai-icons.ts#L11">client/scripts/model/ai-icons.ts:11</a></li>
+									</ul>
+								</aside>
+								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							</li>
+						</ul>
+					</section>
 				</section>
 			</section>
 		</div>
@@ -109,53 +162,17 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_common_types_.html">"common/types"</a>
+						<a href="_client_scripts_model_ai_icons_.html">"client/scripts/model/ai-<wbr>icons"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
-						<a href="../enums/_common_types_.difficulty.html" class="tsd-kind-icon">Difficulty</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_client_scripts_model_ai_icons_.html#getaiicon" class="tsd-kind-icon">get<wbr>AiIcon</a>
 					</li>
-					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
-						<a href="../enums/_common_types_.player.html" class="tsd-kind-icon">Player</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_common_types_.move.html" class="tsd-kind-icon">Move</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_common_types_.moveapiresponse.html" class="tsd-kind-icon">MoveAPIResponse</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_common_types_.movefinder.html" class="tsd-kind-icon">Move<wbr>Finder</a>
-					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_common_types_.winner.html" class="tsd-kind-icon">Winner</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_common_types_.winner.html#winner" class="tsd-kind-icon">winner</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_common_types_.winnerapiresponse.html" class="tsd-kind-icon">WinnerAPIResponse</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="../modules/_common_types_.html#boardmovefinder" class="tsd-kind-icon">Board<wbr>Move<wbr>Finder</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="../modules/_common_types_.html#line" class="tsd-kind-icon">Line</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="../modules/_common_types_.html#linemovefinder" class="tsd-kind-icon">Line<wbr>Move<wbr>Finder</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="../modules/_common_types_.html#tictactoerequest" class="tsd-kind-icon">Tic<wbr>Tac<wbr>Toe<wbr>Request</a>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_client_scripts_model_ai_icons_.html#aiicons" class="tsd-kind-icon">ai<wbr>Icons</a>
 					</li>
 				</ul>
 			</nav>
