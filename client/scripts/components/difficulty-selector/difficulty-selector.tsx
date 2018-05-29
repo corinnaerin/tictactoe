@@ -33,18 +33,18 @@ interface Props extends StateProps, DispatchProps {
 const difficultyOptions: RadioGroupOption[] = [
   {
     value: Difficulty.Easy,
-    text: 'Ron',
-    secondaryText: 'Easy'
+    text: '\uD83D\uDC2D',
+    subtitle: 'Ron (Easy)'
   },
   {
     value: Difficulty.Medium,
-    text: 'Harry',
-    secondaryText: 'Medium'
+    text: '\uD83E\uDD89',
+    subtitle: 'Harry (Medium)'
   },
   {
     value: Difficulty.Hard,
-    text: 'Hermione',
-    secondaryText: 'Hard'
+    text: '\uD83D\uDE3A',
+    subtitle: 'Hermione (Hard)'
   }
 ];
 

@@ -2,6 +2,8 @@ import Board from '../../../common/board';
 import { Difficulty, Move, Player } from '../../../common/types';
 import { Message } from './message';
 
+export type View = 'Welcome' | 'GameConfig' | 'GameBoard';
+
 /**
  * The redux state for the application
  */
@@ -52,17 +54,12 @@ export default interface ApplicationState {
   message?: Message;
 
   /**
-   * Whether to show the GameConfig component
-   */
-  showGameConfig: boolean;
-
-  /**
-   * Whether to show the GameBoard component
-   */
-  showGameBoard: boolean;
-
-  /**
    * The icon the user has chosen
    */
   userIcon: string;
+
+  /**
+   * The current view
+   */
+  view: View;
 }

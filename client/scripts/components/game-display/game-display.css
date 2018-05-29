@@ -1,6 +1,7 @@
 .gameDisplay {
-  flex-shrink: 0;
-  flex-grow: 1;
-  flex-basis: 200px;
   text-align: center;
+}
+
+.versus {
+  font-size: 2em;
 }

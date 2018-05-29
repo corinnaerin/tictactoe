@@ -2,6 +2,8 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Message } from '../../model/message';
 import * as Redux from 'redux';
+import { ComponentCSSClasses, default as ComponentUtil } from '../component-util';
+import Icon from '../icon/icon';
 
 const styles = require('./application-message.css');
 
@@ -29,19 +31,18 @@ interface Props extends StateProps, DispatchProps {}
 const ApplicationMessage: React.StatelessComponent<Props> = ({ message, dismiss }): JSX.Element => {
   const hasMessage = !!message && !!message.message;
   const type = message.type || 'info';
-  const classes = [
-    styles.message,
-    styles[type]
-  ];
-  if (!hasMessage) {
-    classes.push(styles.hide);
-  }
+
+  const cssClasses: ComponentCSSClasses = {
+    [styles.message]: true,
+    [styles[type]]: true,
+    [styles.hide]: !hasMessage
+  };
 
   return (
-      <section className={classes.join(' ')}>
-        <i className={'material-icons ' + styles.icon}>{type}</i>
+      <section className={ComponentUtil.getConditionalCSSClassString(cssClasses)}>
+        <Icon iconName={type} className={styles.icon} />
         <span>{message && message.message}</span>
-        <i className={'material-icons ' + styles.dismiss} onClick={dismiss}>clear</i>
+        <Icon iconName='clear' className={styles.dismiss} onClick={dismiss} />
       </section>
   );
 };

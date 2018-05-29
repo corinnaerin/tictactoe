@@ -3,20 +3,28 @@
   margin: 1em;
   padding: 1em;
   background-color: #379683;
-  color: #EDF5E1;
+  color: #fff;
   font-weight: 400;
-  border: 1px solid #05386B;
+  border: 1px solid #195d50;
   cursor: pointer;
   border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .button:hover {
-  background-color: #5CDB95;
-  color: #05386B;
+  background-color: #54b4a1;
+  color: #fff;
 }
 
 .button:disabled {
-  background-color: #AAA;
-  color: black;
+  background-color: #c8c7c7;
+  color: #565656;
   cursor: default;
+  border-color: #aaa;
+}
+
+.button i {
+  vertical-align: bottom;
+  margin-right: 5px;
 }

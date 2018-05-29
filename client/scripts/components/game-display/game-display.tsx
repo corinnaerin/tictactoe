@@ -1,9 +1,11 @@
 import * as React from 'react';
-import { Player } from '../../../../common/types';
+import { Difficulty, Player } from '../../../../common/types';
 import { connect } from 'react-redux';
 import RenderIf from '../render-if/render-if';
 import Paper from '../paper/paper';
 import GameBoard from '../game-board/game-board';
+import { aiIcons } from '../../model/ai-icons';
+import LargeTextButton from '../large-text-button/large-text-button';
 
 const styles = require('./game-display.css');
 
@@ -16,7 +18,7 @@ interface Props {
   /**
    * Whether to show this component
    */
-  showGameBoard: boolean;
+  view: boolean;
 
   /**
    * The current winner of the game (which would be Player.None if the game
@@ -28,6 +30,16 @@ interface Props {
    * The player whose turn it is
    */
   turn: Player;
+
+  /**
+   * The icon the user chose for their character
+   */
+  userIcon: string;
+
+  /**
+   * The difficulty of the current game
+   */
+  difficulty: Difficulty;
 }
 
 /**
@@ -38,7 +50,7 @@ interface Props {
  * @param {any} gameInProgress Whether the game is in progress
  * @returns {string}
  */
-const getText = ({turn, winner, gameInProgress}): string => {
+const getText = ({ turn, winner, gameInProgress }): string => {
   if (gameInProgress) {
     return turn === Player.User ? 'It\'s your turn!' : 'Waiting for the AI to move...';
   }
@@ -49,7 +61,7 @@ const getText = ({turn, winner, gameInProgress}): string => {
     case Player.User:
       return 'You have triumphed over the machine!';
     case Player.Tie:
-      return 'Stalemate... I suppose we\'ll spare your life. Just this once..';
+      return 'Stalemate... I suppose we\'ll spare your life. Just this once...';
     case Player.None:
       return '';
   }
@@ -60,19 +72,23 @@ const getText = ({turn, winner, gameInProgress}): string => {
  * @param {props} Props
  * @returns {JSX.Element}
  */
-const GameDisplay: React.StatelessComponent<Props> = ({gameInProgress, showGameBoard, winner, turn}): JSX.Element => {
+const GameDisplay: React.StatelessComponent<Props> = ({ gameInProgress, view, winner, turn, userIcon, difficulty }): JSX.Element => {
   return (
-      <RenderIf condition={showGameBoard}>
-        <Paper className={styles.gameDisplay}>
-          <div>{getText({turn, winner, gameInProgress})}</div>
-          <GameBoard/>
-        </Paper>
-      </RenderIf>
+      <Paper className={styles.gameDisplay}>
+        <h2>{getText({ turn, winner, gameInProgress })}</h2>
+        <GameBoard/>
+        <div className={styles.versus}>
+          {userIcon} vs {aiIcons[difficulty]}
+        </div>
+        <RenderIf condition={!gameInProgress}>
+          <LargeTextButton route='/gameconfig' text='Play again' iconName='replay' />
+        </RenderIf>
+      </Paper>
   );
 };
 
-const mapStateToProps = ({ gameInProgress, turn, winner, showGameBoard }): Props => {
-  return { gameInProgress, turn, winner, showGameBoard };
+const mapStateToProps = ({ gameInProgress, turn, winner, view, userIcon, difficulty }): Props => {
+  return { gameInProgress, turn, winner, view, userIcon, difficulty };
 };
 
 export default connect(mapStateToProps)(GameDisplay);

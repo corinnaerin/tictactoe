@@ -11,20 +11,13 @@ interface DispatchProps {
    * which will trigger a state update with a message
    */
   wimpOut: React.FormEventHandler<HTMLButtonElement>;
-
-  /**
-   * The click handler for when someone clicks on the "I'm not scared" button,
-   * which will trigger a state update to show the game configuration component
-   */
-  meSoBrave: React.FormEventHandler<HTMLButtonElement>;
 }
 
 interface StateProps {
   /**
-   * Whether the game config component is visible, in which case
-   * we should disable the buttons
+   * Whether to show this component
    */
-  showGameConfig: boolean;
+  showWelcome: boolean;
 }
 
 interface Props extends DispatchProps, StateProps {
@@ -36,7 +29,7 @@ interface Props extends DispatchProps, StateProps {
  * @param {Props} props
  * @returns {JSX.Element}
  */
-const Welcome: React.StatelessComponent<Props> = ({showGameConfig, meSoBrave, wimpOut}): JSX.Element => {
+const Welcome: React.StatelessComponent<Props> = ({showWelcome, wimpOut}): JSX.Element => {
   return (
       <Paper>
         <h1>Enter the dungeon if you dare...</h1>
@@ -48,8 +41,8 @@ const Welcome: React.StatelessComponent<Props> = ({showGameConfig, meSoBrave, wi
           on your time on earth.
         </section>
         <ButtonGroup>
-          <LargeTextButton id='brave' text={'\uD83D\uDE08 I\'m not scared!'} onClick={meSoBrave} disabled={showGameConfig}/>
-          <LargeTextButton id='wimp' text={'\uD83C\uDFC3 Ahh get me out of here!'} onClick={wimpOut} disabled={showGameConfig}/>
+          <LargeTextButton id='brave' text={'\uD83D\uDE08 I\'m not scared!'} route='/gameconfig' />
+          <LargeTextButton id='wimp' text={'\uD83C\uDFC3 Ahh get me out of here!'} onClick={wimpOut} />
         </ButtonGroup>
       </Paper>
   );
@@ -70,23 +63,12 @@ const mapDispatchToProps = (dispatch: Redux.Dispatch): DispatchProps => {
           type: 'warning'
         }
       });
-    },
-
-    /**
-     * The click handler for when someone clicks on the "I'm not scared" button,
-     * which will trigger a state update to show the game configuration component
-     */
-    meSoBrave: () => {
-      dispatch({
-        type: 'SET_SHOW_GAME_CONFIG',
-        data: true
-      });
     }
   };
 };
 
-const mapStateToProps = ({ showGameConfig }) => {
-  return { showGameConfig };
+const mapStateToProps = ({ showWelcome }) => {
+  return { showWelcome };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Welcome);

@@ -11,7 +11,6 @@ import Coordinates from '../model/coordinates';
 export default class GameCanvas {
   private canvas: HTMLCanvasElement;
   private context: CanvasRenderingContext2D;
-  private boundingClientRect: ClientRect;
 
   constructor() {
     this.getMousePosition = this.getMousePosition.bind(this);
@@ -27,7 +26,6 @@ export default class GameCanvas {
   public init(canvas: HTMLCanvasElement) {
     this.canvas = canvas;
     this.context = this.canvas.getContext('2d');
-    this.boundingClientRect = this.canvas.getBoundingClientRect();
     this.drawEmptyBoard();
   }
 
@@ -56,8 +54,8 @@ export default class GameCanvas {
    */
   public getMousePosition(event: MouseEvent<HTMLCanvasElement>): Coordinates {
     return {
-      x: event.clientX - this.boundingClientRect.left,
-      y: event.clientY - this.boundingClientRect.top
+      x: event.nativeEvent.offsetX,
+      y: event.nativeEvent.offsetY
     };
   }
 
@@ -65,10 +63,10 @@ export default class GameCanvas {
    * Draw the lines for an empty board
    */
   private drawEmptyBoard() {
-    CanvasUtil.drawLine(this.context, { x: 200, y: 100 }, { x: 200, y: 400 });
-    CanvasUtil.drawLine(this.context, { x: 300, y: 100 }, { x: 300, y: 400 });
-    CanvasUtil.drawLine(this.context, { x: 100, y: 200 }, { x: 400, y: 200 });
-    CanvasUtil.drawLine(this.context, { x: 100, y: 300 }, { x: 400, y: 300 });
+    CanvasUtil.drawLine(this.context, { x: 100, y: 0 }, { x: 100, y: 300 });
+    CanvasUtil.drawLine(this.context, { x: 200, y: 0 }, { x: 200, y: 300 });
+    CanvasUtil.drawLine(this.context, { x: 0, y: 100 }, { x: 300, y: 100 });
+    CanvasUtil.drawLine(this.context, { x: 0, y: 200 }, { x: 300, y: 200 });
   }
 
 }

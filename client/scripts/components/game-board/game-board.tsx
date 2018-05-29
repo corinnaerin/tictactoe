@@ -8,6 +8,9 @@ import moveSaga from '../../saga/move-saga';
 import winnerSaga from '../../saga/winner-saga';
 import Board from '../../../../common/board';
 import BoardUtil from '../../../../common/board-util';
+import { aiIcons } from '../../model/ai-icons';
+
+const styles = require('./game-board.css');
 
 interface StateProps {
   /**
@@ -56,16 +59,6 @@ interface State {
    */
   gameCanvas: GameCanvas;
 }
-
-/**
- * Map from the game difficulty to the icon to use for its moves
- * @type {Map<Difficulty, string>}
- */
-const aiIcons = new Map([
-  [Difficulty.Easy, '\uD83D\uDC2D'],
-  [Difficulty.Medium, '\uD83E\uDD89'],
-  [Difficulty.Hard, '\uD83D\uDE3A']
-]);
 
 /**
  * This component handles the game state: triggering API
@@ -125,7 +118,7 @@ class GameBoard extends React.Component<Props, State> {
     // If the turn has changed, process the turn that was just made
     if (this.props.lastMove && prevProps.turn !== this.props.turn) {
       // Actually draw the last move made, either for the user or the AI
-      const icon = prevProps.turn === Player.AI ? aiIcons.get(this.props.difficulty) : this.props.userIcon;
+      const icon = prevProps.turn === Player.AI ? aiIcons[this.props.difficulty] : this.props.userIcon;
       this.state.gameCanvas.drawMove(this.props.lastMove, icon);
     }
 
@@ -169,9 +162,10 @@ class GameBoard extends React.Component<Props, State> {
   public render(): JSX.Element {
     return (
         <canvas
+            className={styles.canvas}
             ref={this.canvasRef}
-            width='500'
-            height='500'
+            width='300'
+            height='300'
             onClick={this.props.gameInProgress ? this.onClick : null}
         />
     );

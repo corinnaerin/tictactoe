@@ -7,9 +7,9 @@ import { Move } from '../../../common/types';
  * @type {Coordinates[][]}
  */
 const boardCoordinates: Coordinates[][] = [
-  [{x: 100, y: 100}, {x: 200, y: 100}, {x: 300, y: 100}],
-  [{x: 100, y: 200}, {x: 200, y: 200}, {x: 300, y: 200}],
-  [{x: 100, y: 300}, {x: 200, y: 300}, {x: 300, y: 300}]
+  [{x: 0, y: 0}, {x: 100, y: 0}, {x: 200, y: 0}],
+  [{x: 0, y: 100}, {x: 100, y: 100}, {x: 200, y: 100}],
+  [{x: 0, y: 200}, {x: 100, y: 200}, {x: 200, y: 200}]
 ];
 
 /**
@@ -20,16 +20,12 @@ class CoordinatesUtil {
   /**
    * Given the x & y coordinates on the canvas,
    * get the row & column indexes of the square that was
-   * clicked, or undefined if the click was outside of the board
+   * clicked
    * @param {number} x the x coordinate of the mouse position
    * @param {number} y the y coordinate of the mouse position
    * @returns {Move} the square clicked
    */
   public static getSquareClicked({x, y}): Move {
-    if (x < 100 || x > 400 || y < 100 || y > 400) {
-      // Do nothing - the click was outside the board
-      return;
-    }
     return {
       column: CoordinatesUtil.getRowOrColumnIndex(x),
       row: CoordinatesUtil.getRowOrColumnIndex(y)
@@ -43,10 +39,10 @@ class CoordinatesUtil {
    * @returns {number} the index of the row or column
    */
   public static getRowOrColumnIndex(coord: number): number {
-    if (coord < 200) {
+    if (coord < 100) {
       return 0;
     }
-    if (coord < 300) {
+    if (coord < 200) {
       return 1;
     }
     return 2;

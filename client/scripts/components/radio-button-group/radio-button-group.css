@@ -8,13 +8,73 @@
 }
 
 .label {
-  font-size: 1em;
-  display: inline-block;
-  padding: 5px;
+  font-size: 3em;
+  cursor: pointer;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid transparent;
+  display: block;
+  box-sizing: border-box;
 }
 
-.secondary {
-  color: #888;
-  font-size: 0.7em;
-  margin-left: 5px;
+.subtitle {
+  font-size: 0.3em;
+  line-height: 1.5em;
+  margin-top: 5px;
+  text-shadow: none;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.inputContainer > div {
+  margin: 5px;
+}
+
+.label:hover {
+  background-color: #54b4a1;
+  border: 1px solid #195d50;
+  border-radius: 4px;
+}
+
+.label:hover .subtitle {
+  color: white;
+}
+
+.radio {
+  display: none;
+}
+
+.radio:checked + .label {
+  background-color: #379683;
+  border: 1px solid #195d50;
+  border-radius: 4px;
+}
+
+.label.disabled:hover {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.label.disabled:hover,
+.radio:checked + .label.disabled {
+  cursor: default;
+}
+
+.radio:checked + .label.disabled {
+  background-color: #c8c7c7;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.radio:checked + .label .subtitle {
+  color: white;
+}
+
+.label.disabled:hover .subtitle,
+.radio:checked + .label.disabled .subtitle {
+  color: #565656;
 }

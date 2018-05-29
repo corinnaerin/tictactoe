@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import DifficultySelector from '../difficulty-selector/difficulty-selector';
 import UserIconSelector from '../user-icon-selector/user-icon-selector';
 import Paper from '../paper/paper';
-import RenderIf from '../render-if/render-if';
 import LargeTextButton from '../large-text-button/large-text-button';
 import * as Redux from 'redux';
 
@@ -35,17 +34,18 @@ interface Props extends StateProps, DispatchProps {
  */
 const GameConfig: React.StatelessComponent<Props> = ({ showGameConfig, startGame, gameInProgress }): JSX.Element => {
   return (
-      <RenderIf condition={showGameConfig}>
-        <Paper className={styles.gameConfig}>
-          <DifficultySelector/>
-          <UserIconSelector/>
+      <Paper className={styles.gameConfig}>
+        <h2>Pick your poison...</h2>
+        <DifficultySelector/>
+        <UserIconSelector/>
+        <div className={styles.buttonContainer}>
           <LargeTextButton
-              disabled={gameInProgress}
               text={'\uD83C\uDFB2 Let the games\'s begin!'}
+              route='/gamedisplay'
               onClick={startGame}
           />
-        </Paper>
-      </RenderIf>
+        </div>
+      </Paper>
   );
 };
 

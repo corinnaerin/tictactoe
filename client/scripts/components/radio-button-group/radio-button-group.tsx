@@ -1,5 +1,6 @@
 import * as React from 'react';
 import RenderIf from '../render-if/render-if';
+import ComponentUtil from '../component-util';
 
 const styles = require('./radio-button-group.css');
 
@@ -19,10 +20,10 @@ export interface RadioGroupOption {
   text?: string;
 
   /**
-   * (Optional) the secondary text to display next to the
+   * (Optional) the secondary text to display under the
    * primary text
    */
-  secondaryText?: string;
+  subtitle?: string;
 }
 
 interface Props {
@@ -55,6 +56,16 @@ interface Props {
    * Whether to disable all the radio buttons
    */
   disabled?: boolean;
+
+  /**
+   * CSS class to add to the <label> element
+   */
+  labelClass?: string;
+
+  /**
+   * CSS class to add to the <input> element
+   */
+  inputClass?: string;
 }
 
 /**
@@ -63,14 +74,22 @@ interface Props {
  * @returns {JSX.Element}
  */
 const RadioButtonGroup: React.StatelessComponent<Props> = (props: Props): JSX.Element => {
+  const labelClasses = {
+    [styles.label]: true,
+    [styles.disabled]: props.disabled,
+    [props.labelClass]: true
+  };
   return (
       <section className={styles.group}>
-        <div className={styles.groupLabel}>{props.groupLabel}</div>
-        {props.options.map(option => {
-          return (
-              <div key={`${props.name}__${option.value}`}>
-                <label className={styles.label}>
+        <h3 className={styles.groupLabel}>{props.groupLabel}</h3>
+        <div className={styles.inputContainer}>
+          {props.options.map(option => {
+            const key = `${props.name}__${option.value}`;
+            return (
+                <div key={`${props.name}__${option.value}`}>
                   <input
+                      id={key}
+                      className={ComponentUtil.getCSSClassString(styles.radio, props.inputClass)}
                       type='radio'
                       name={props.name}
                       value={option.value}
@@ -78,14 +97,16 @@ const RadioButtonGroup: React.StatelessComponent<Props> = (props: Props): JSX.El
                       disabled={props.disabled}
                       onChange={props.onChange}
                   />
-                  &nbsp;{option.text || option.value}
-                  <RenderIf condition={!!option.secondaryText}>
-                    <span className={styles.secondary}>({option.secondaryText})</span>
-                  </RenderIf>
-                </label>
-              </div>
-          );
-        })}
+                  <label htmlFor={key} className={ComponentUtil.getConditionalCSSClassString(labelClasses)}>
+                    {option.text || option.value}
+                    <RenderIf condition={!!option.subtitle}>
+                      <div className={styles.subtitle}>{option.subtitle}</div>
+                    </RenderIf>
+                  </label>
+                </div>
+            );
+          })}
+        </div>
       </section>
   );
 };

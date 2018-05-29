@@ -1,5 +1,11 @@
-.gameConfig {
-  flex-shrink: 1;
-  flex-grow: 1;
-  flex-basis: 200px;
+.gameConfig h2 {
+  text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }

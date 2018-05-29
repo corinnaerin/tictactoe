@@ -11,8 +11,7 @@ export const INITIAL_STATE: ApplicationState = {
   difficulty: Difficulty.Easy,
   winner: Player.None,
   isFetching: false,
-  showGameConfig: false,
-  showGameBoard: false,
+  view: 'Welcome',
   userIcon: '\uD83E\uDDD9'
 };
 
@@ -50,7 +49,7 @@ const setDifficulty: Redux.Reducer<ApplicationState> = (state: ApplicationState,
 const startGame: Redux.Reducer<ApplicationState> = (state: ApplicationState): ApplicationState => {
   return {
     ...state,
-    showGameBoard: true,
+    view: 'GameBoard',
     gameInProgress: true,
     lastMove: null,
     board: BoardUtil.EMPTY_BOARD,
@@ -91,10 +90,10 @@ const setMessage: Redux.Reducer<ApplicationState> = (state: ApplicationState, ac
   };
 };
 
-const setShowGameConfig: Redux.Reducer<ApplicationState> = (state: ApplicationState, action: Action): ApplicationState => {
+const updateView: Redux.Reducer<ApplicationState> = (state: ApplicationState, action: Action): ApplicationState => {
   return {
     ...state,
-    showGameConfig: action.data
+    view: action.data
   };
 };
 
@@ -120,7 +119,7 @@ const reducers: ReducerMap = {
   START_GAME: startGame,
   CLEAR_MESSAGE: clearMessage,
   SET_MESSAGE: setMessage,
-  SET_SHOW_GAME_CONFIG: setShowGameConfig,
+  UPDATE_VIEW: updateView,
   SET_USER_ICON: setUserIcon
 };
 

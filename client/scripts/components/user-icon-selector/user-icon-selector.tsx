@@ -33,22 +33,28 @@ interface Props extends StateProps, DispatchProps {
  */
 const iconOptions: RadioGroupOption[] = [
   {
-    value: '\uD83E\uDDD9' // Wizard
+    value: '\uD83E\uDDD9', // Wizard
+    subtitle: 'Wizard'
   },
   {
-    value: '\uD83D\uDC7E' // Alien
+    value: '\uD83D\uDC7E', // Alien
+    subtitle: 'Alien'
   },
   {
-    value: '\uD83E\uDD16' // Robot
+    value: '\uD83E\uDD16', // Robot
+    subtitle: 'Robot'
   },
   {
-    value: '\uD83E\uDDDA' // Fairy
+    value: '\uD83E\uDDDA', // Fairy
+    subtitle: 'Fairy'
   },
   {
-    value: '\uD83E\uDDDC' // Mermaid
+    value: '\uD83E\uDDDC', // Mermaid
+    subtitle: 'Mermaid'
   },
   {
-    value: '\uD83E\uDDDD' // Elf
+    value: '\uD83E\uDDDD', // Elf
+    subtitle: 'Elf'
   }
 ];
 
