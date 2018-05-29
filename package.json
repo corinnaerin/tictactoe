@@ -17,7 +17,7 @@
     "release": "npm run postinstall",
     "coverage": "nyc npm test",
     "docs": "typedoc --options typedoc.json  --tsconfig tsconfig.typedoc.json",
-    "test": "mocha test/**/*.{ts,tsx}",
+    "test": "mocha",
     "watch": "cross-env NODE_ENV=development WATCH=true nodemon server/index.ts",
     "start": "node build/server/index.js",
     "nodemon": "cross-env NODE_ENV=development nodemon server/index.ts",

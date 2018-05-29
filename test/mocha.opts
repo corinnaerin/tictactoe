@@ -1,3 +1,4 @@
 --require ts-node/register
 --full-trace
 --reporter nyan
+test/**/*.{ts,tsx}
