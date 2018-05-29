@@ -12,7 +12,7 @@ export const INITIAL_STATE: ApplicationState = {
   winner: Player.None,
   isFetching: false,
   view: 'Welcome',
-  userIcon: '\uD83E\uDDD9'
+  userIcon: '\uD83D\uDC79'
 };
 
 const getWinnerSuccess: Redux.Reducer<ApplicationState> = (state: ApplicationState, action: Action): ApplicationState => {
@@ -90,13 +90,6 @@ const setMessage: Redux.Reducer<ApplicationState> = (state: ApplicationState, ac
   };
 };
 
-const updateView: Redux.Reducer<ApplicationState> = (state: ApplicationState, action: Action): ApplicationState => {
-  return {
-    ...state,
-    view: action.data
-  };
-};
-
 const setUserIcon: Redux.Reducer<ApplicationState> = (state: ApplicationState, action: Action): ApplicationState => {
   return {
     ...state,
@@ -119,7 +112,6 @@ const reducers: ReducerMap = {
   START_GAME: startGame,
   CLEAR_MESSAGE: clearMessage,
   SET_MESSAGE: setMessage,
-  UPDATE_VIEW: updateView,
   SET_USER_ICON: setUserIcon
 };
 
