@@ -3,6 +3,6 @@
   "mode": "modules",
   "readme": "./README.md",
   "excludeExternals": true,
-  "out": "docs",
+  "out": "build/public/docs",
   "name": "TicTacToe Dungeon"
 }
