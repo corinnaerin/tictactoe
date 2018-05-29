@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Difficulty } from '../../../../common/types';
 import * as Redux from 'redux';
 import RadioButtonGroup, { RadioGroupOption } from '../radio-button-group/radio-button-group';
+import { getAiIcon } from '../../model/ai-icons';
 
 interface StateProps {
   /**
@@ -33,18 +34,23 @@ interface Props extends StateProps, DispatchProps {
 const difficultyOptions: RadioGroupOption[] = [
   {
     value: Difficulty.Easy,
-    text: '\uD83D\uDC2D',
+    text: getAiIcon(Difficulty.Easy),
     subtitle: 'Ron (Easy)'
   },
   {
     value: Difficulty.Medium,
-    text: '\uD83E\uDD89',
+    text: getAiIcon(Difficulty.Medium),
     subtitle: 'Harry (Medium)'
   },
   {
     value: Difficulty.Hard,
-    text: '\uD83D\uDE3A',
+    text: getAiIcon(Difficulty.Hard),
     subtitle: 'Hermione (Hard)'
+  },
+  {
+    value: Difficulty.Luna,
+    text: getAiIcon(Difficulty.Luna),
+    subtitle: 'Luna (???)'
   }
 ];
 

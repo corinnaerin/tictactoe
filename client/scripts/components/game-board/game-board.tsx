@@ -8,7 +8,7 @@ import moveSaga from '../../saga/move-saga';
 import winnerSaga from '../../saga/winner-saga';
 import Board from '../../../../common/board';
 import BoardUtil from '../../../../common/board-util';
-import { aiIcons } from '../../model/ai-icons';
+import { getAiIcon } from '../../model/ai-icons';
 
 const styles = require('./game-board.css');
 
@@ -17,6 +17,7 @@ interface StateProps {
    * Whether the game is in progress
    */
   gameInProgress: boolean;
+
   /**
    * The currently selected game difficulty
    */
@@ -118,7 +119,7 @@ class GameBoard extends React.Component<Props, State> {
     // If the turn has changed, process the turn that was just made
     if (this.props.lastMove && prevProps.turn !== this.props.turn) {
       // Actually draw the last move made, either for the user or the AI
-      const icon = prevProps.turn === Player.AI ? aiIcons[this.props.difficulty] : this.props.userIcon;
+      const icon = prevProps.turn === Player.AI ? getAiIcon(this.props.difficulty) : this.props.userIcon;
       this.state.gameCanvas.drawMove(this.props.lastMove, icon);
     }
 

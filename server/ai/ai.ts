@@ -137,4 +137,20 @@ export default class AI {
 
     throw new createError.InternalServerError(MoveUtil.NO_MOVE_FOUND);
   }
+
+  /**
+   * This just returns a random move every turn. Because it's Luna, and
+   * who knows what she'll do next?
+   * @param {Board} board
+   * @returns {Move}
+   */
+  public static getLunaMove(board: Board): Move {
+    const move = randomSquare(board);
+
+    if (move) {
+      return move;
+    }
+
+    throw new createError.InternalServerError(MoveUtil.NO_MOVE_FOUND);
+  }
 }

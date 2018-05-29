@@ -46,6 +46,7 @@ class Server {
     router.post('/move/easy', Routes.easy);
     router.post('/move/medium', Routes.medium);
     router.post('/move/hard', Routes.hard);
+    router.post('/move/luna', Routes.luna);
 
     router.use(errorHandler);
 

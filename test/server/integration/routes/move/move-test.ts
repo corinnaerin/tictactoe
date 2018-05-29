@@ -7,7 +7,7 @@ import { expect } from 'chai';
 import * as log from 'fancy-log';
 import MoveUtil from '../../../../../server/util/move-util';
 
-['easy', 'medium', 'hard'].forEach(function(difficulty) {
+['easy', 'medium', 'hard', 'luna'].forEach(function(difficulty) {
   describe(`/api/move/${difficulty}`, function() {
     before(function() {
       this.testRequest = TestUtil.getTestRequest(`/api/move/${difficulty}`);

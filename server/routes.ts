@@ -25,6 +25,10 @@ export default class Routes {
     Routes.processMoveRequest(req, res, AI.getHardMove);
   }
 
+  public static luna(req: Request, res: Response): void {
+    Routes.processMoveRequest(req, res, AI.getLunaMove);
+  }
+
   private static processMoveRequest(req: Request, res: Response, fn: (board: Board) => Move) {
     const board: Board = req.body;
     const move: Move = fn(board);

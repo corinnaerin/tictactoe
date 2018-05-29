@@ -64,7 +64,8 @@ export interface MoveFinder {
 export enum Difficulty {
   Easy = 0,
   Medium = 1,
-  Hard = 2
+  Hard = 2,
+  Luna = 3
 }
 
 /**

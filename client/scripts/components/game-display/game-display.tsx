@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import RenderIf from '../render-if/render-if';
 import Paper from '../paper/paper';
 import GameBoard from '../game-board/game-board';
-import { aiIcons } from '../../model/ai-icons';
+import { getAiIcon } from '../../model/ai-icons';
 import LargeTextButton from '../large-text-button/large-text-button';
 
 const styles = require('./game-display.css');
@@ -78,7 +78,7 @@ const GameDisplay: React.StatelessComponent<Props> = ({ gameInProgress, view, wi
         <h2>{getText({ turn, winner, gameInProgress })}</h2>
         <GameBoard/>
         <div className={styles.versus}>
-          {userIcon} vs {aiIcons[difficulty]}
+          {userIcon} vs {getAiIcon(difficulty)}
         </div>
         <RenderIf condition={!gameInProgress}>
           <LargeTextButton route='/gameconfig' text='Play again' iconName='replay' />

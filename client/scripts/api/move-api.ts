@@ -9,7 +9,8 @@ import Board from '../../../common/board';
 export const ROUTE_MAP: Map<Difficulty, string> = new Map([
     [ Difficulty.Hard, '/api/move/hard' ],
     [ Difficulty.Medium, '/api/move/medium' ],
-    [ Difficulty.Easy, '/api/move/easy']
+    [ Difficulty.Easy, '/api/move/easy'],
+    [ Difficulty.Luna, '/api/move/luna']
 ]);
 
 /**
