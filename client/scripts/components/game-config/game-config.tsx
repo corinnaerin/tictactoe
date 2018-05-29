@@ -40,7 +40,7 @@ const GameConfig: React.StatelessComponent<Props> = ({ showGameConfig, startGame
         <UserIconSelector/>
         <div className={styles.buttonContainer}>
           <LargeTextButton
-              text={'\uD83C\uDFB2 Let the games\'s begin!'}
+              text={'\uD83C\uDFB2 Let the game begin!'}
               route='/gamedisplay'
               onClick={startGame}
           />
