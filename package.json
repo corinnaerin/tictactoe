@@ -9,7 +9,7 @@
     "npm": "6.0.1"
   },
   "scripts": {
-    "postinstall": "npm run coverage && npm run client:release && npm run server:release & npm run docs",
+    "postinstall": "npm run coverage && npm run client:release && npm run server:release && npm run docs",
     "client:build": "cross-env NODE_ENV=development webpack",
     "client:release": "cross-env NODE_ENV=production webpack",
     "server:tslint": "tslint --project tsconfig.json --format verbose",
